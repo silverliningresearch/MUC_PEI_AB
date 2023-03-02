@@ -48,8 +48,12 @@ function initCurrentTimeVars() {
   //return [day, month,year].join('-');
   if (document.getElementById('year_month') && document.getElementById('year_month').value.length > 0)
   {
-    currentMonth=document.getElementById('year_month').value;
+    if (document.getElementById('year_month').value != "current-month")
+    {
+      currentMonth = document.getElementById('year_month').value;
+    }
   }
+  console.log("currentMonth: ", currentMonth);
 }
 
 function isCurrentMonth(interviewEndDate)
@@ -133,8 +137,7 @@ function prepareInterviewData() {
       && (isCurrentMonth(interview.InterviewEndDate))
       )
     {
-      
-      if (interview["Dest"] &&  interview["Flight"]) {
+      if (interview["Dest"]) {
         var dest = '"Dest"' + ":" + '"' +  interview["Dest"] + '"' + ", " ;
         var InterviewEndDate = '"InterviewEndDate"' + ":" + '"' +  interview["InterviewEndDate"] ;
         var str = '{' + dest + InterviewEndDate + '"}';
