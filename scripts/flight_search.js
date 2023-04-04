@@ -77,7 +77,7 @@ function load_flight_list() {
         }
 
         var Show = '"Show"' + ":" + '"' +  flightRawList[i].Flight + " (" 
-        Show += flightRawList[i].Time + " to " + flightRawList[i].DestName + " (" + flightRawList[i].Dest + ")";
+        Show += flightRawList[i].Time + " to " + flightRawList[i].DestName ;
         if (flightRawList[i].Next && flightRawList[i].Next !="" && flightRawList[i].Next != flightRawList[i].Dest) {
           Show += " via " +  flightRawList[i].Next ;
         }
