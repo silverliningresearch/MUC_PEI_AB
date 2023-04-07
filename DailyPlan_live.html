@@ -44,7 +44,7 @@
         data.addColumn('string', 'Time');
         data.addColumn('string', 'Flight');
         data.addColumn('string', 'To');
-        data.addColumn('string', 'Via');
+        //data.addColumn('string', 'Via');
         //data.addColumn('string', 'DOOP');
         //data.addColumn('number', 'Remaining Flights');
         data.addColumn('number', 'Quota');
@@ -59,7 +59,8 @@
           var row = daily_plan_data[i];
             { 
                 data.addRows([[row.TER, row.Date_Time, 
-                row.Flight, row.Dest, row.Next, 
+                row.Flight, row.Dest, 
+                //row.Next, 
                 //row.doop, Number(row.remaining_flights), 
                 Number(row.Quota), Number(row.Completed), Number(row.Difference), 
                 Number(row.Completed_percent), 
