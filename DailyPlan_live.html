@@ -7,8 +7,10 @@
     <script src="data/invalid_cases.js"></script>
     <script src="scripts/PrepareData.js"></script>
 		<script src="scripts/CalculateData.js"></script>
-		
+    <script src="scripts/flight_search.js"></script>
+
     <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_alc/MUC/data/interview_data.js"></script>
+    <link href="css/styles.css" rel ="stylesheet" type="text/css" />
     <style>
       .table-font {
         font-size: 16px;
@@ -19,6 +21,35 @@
         font-size: 16px;
         /* height: 18px; */
       }
+       .button {
+        border: none;
+        color: white;
+        padding: 15px 15px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        width: 200px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin: 0;
+        position: relative;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+      .red {background-color: #f44336;;} /* Red */
+
+      .blue {background-color: #0099CC;;} /* Blue */ 
+
+
+
+      h1 {text-align: center;}
+
+
     </style>
 
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -130,10 +161,52 @@
         //overall_status += " - Quota completed: " + total_quota_completed;
                 document.getElementById("overall_status").innerHTML = overall_status + " | " + "Data updated at " + download_time;
       }
+    
+      function start_new_interview() {
+      console.log("start_new_interview");
+      
+      let url = "https://survey.alchemer.eu/s3/90261702/AB?";
+      url = url + "flight="+ flightForInterview.Flight;
+      url = url + "&airlinecode=" + flightForInterview.AirlineCode;
+      url = url + "&airlinename=" + flightForInterview.Airline;
+      url = url + "&dest=" + flightForInterview.Dest;
+      url = url + "&destname=" + flightForInterview.DestName;
+      if (flightForInterview.Next) url = url + "&via=" + flightForInterview.Next;
+      if (flightForInterview.NextName) url = url + "&vianame=" + flightForInterview.NextName;
+      document.getElementById('inputFlightCodeID').value = "";
+      window.location.href = url;
+    }
+
+      window.addEventListener('load', function () {
+      load_flight_list();
+      document.getElementById('inputFlightCodeID').value = "";
+    });
+
+
     </script>
   </head>
   <body>
-		<h1>Daily Plan – MUC PEI AB Survey</h1>
+    </br></br></br>
+    <div>
+      <input list="flightDropBoxList" 
+        onchange="select_flight()"  
+        onkeyup="update_drop_box_list()" 
+        placeholder="Please key in flight number:"
+        name="inputFlightCodeID" id="inputFlightCodeID" >
+      <datalist id="flightDropBoxList">
+    </div>  
+  
+    <div>
+      </br></br></br> </br></br>
+      <button onclick="start_new_interview()" class="button blue">Start survey</button>
+      </br></br></br> 
+    </div>
+
+    <div style="background-color:#66CCFF;">
+      </br>
+    </div>
+
+		<!-- <h3>Daily Plan – MUC PEI AB Survey</h3> -->
     <h4 id="overall_status"></h4>
     <!-- <h4 id="download_time"></h4> -->
     <div id="dashboard_div">
