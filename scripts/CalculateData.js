@@ -12,6 +12,24 @@ function CalculateAirportAirLineReport() {
 
   console.log("interview_data: ", interview_data);
 
+  //check what not belong to quota data
+  var found_temp = 0;
+  var not_in_quota_list =[];
+  for (i = 0; i < interview_data.length; i++) 
+  {
+    total_completed++;
+    found_temp = 0;
+    for (j = 0; j < quota_data.length; j++) 
+    {
+      if (quota_data[j].Dest.toUpperCase() == interview_data[i].Dest.toUpperCase()) 
+      { 
+        found_temp = 1;
+      }
+    }
+    if (found_temp==0) not_in_quota_list.push(interview_data[i]);
+  }    
+  console.log("not_in_quota_list: ", not_in_quota_list);
+
   for (i = 0; i < quota_data.length; i++) {
     row = quota_data[i];
     row.Completed = 0;
@@ -27,14 +45,14 @@ function CalculateAirportAirLineReport() {
     row.Prioritisation_score = row.Difference_percent*row.Difference/100;
 
     row.Completed_percent =(100*(row.Completed/row.Quota)).toFixed(0);
-    total_completed = total_completed + row.Completed;
+    total_quota_completed = total_quota_completed + row.Completed;
         
     if ( row.Difference > 0) { //over quota
-      total_quota_completed = total_quota_completed +row.Quota*1;
+      //total_quota_completed = total_quota_completed +row.Quota*1;
     }
     else { //<= 0
       if (row.Completed) {
-        total_quota_completed = total_quota_completed + row.Completed*1;
+        //total_quota_completed = total_quota_completed + row.Completed*1;
       }
     }
 

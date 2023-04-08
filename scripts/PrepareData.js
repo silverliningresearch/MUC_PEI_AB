@@ -14,9 +14,6 @@ var total_quota = 750;
 var total_completed;
 
 var total_quota_completed;
-var total_hard_quota;
-
-
 /************************************/
 function initCurrentTimeVars() {
   var d = new Date();
