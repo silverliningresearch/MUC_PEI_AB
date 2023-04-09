@@ -29,7 +29,8 @@ function CalculateAirportAirLineReport() {
     if (found_temp==0) not_in_quota_list.push(interview_data[i]);
   }    
   console.log("not_in_quota_list: ", not_in_quota_list);
-
+  total_completed_percent = (100*(total_completed/total_quota)).toFixed(0);   
+  
   for (i = 0; i < quota_data.length; i++) {
     row = quota_data[i];
     row.Completed = 0;
