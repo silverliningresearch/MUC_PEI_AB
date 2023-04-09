@@ -124,8 +124,6 @@ function prepareInterviewData() {
         var dest = '"Dest"' + ":" + '"' +  interview["Dest"] + '"' + ", " ;
         var InterviewEndDate = '"InterviewEndDate"' + ":" + '"' +  interview["InterviewEndDate"] ;
         var str = '{' + dest + InterviewEndDate + '"}';
-
-        console.log("str id: ", str);
         if (isvalid_id(interview["InterviewId"])) //check if valid
         {
           interview_data.push(JSON.parse(str));
