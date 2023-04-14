@@ -56,7 +56,7 @@ function load_flight_list() {
 
   for (i = 0; i < flightRawList.length; i++) {
     var flight = flightRawList[i];
-    if ((flight.Date == getToDate()) //today flight && departure
+    if ((flight.Date == getToDate() && notDeparted(flight.Time)) //today flight && departure
     ) 
     {
       {
