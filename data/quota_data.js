@@ -256,50 +256,32 @@
         {"Dest": "LYS", "Quota": "4", "Year": "2023", "Month": "02"},
         {"Dest": "ADB", "Quota": "3", "Year": "2023", "Month": "02"},
 {
-  "Dest": "ACE",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
   "Dest": "ADB",
-  "Quota": 4,
+  "Quota": 5,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "AGP",
-  "Quota": 3,
+  "Quota": 4,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "AMS",
-  "Quota": 14,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "AOI",
-  "Quota": 1,
+  "Quota": 16,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "ARN",
-  "Quota": 9,
+  "Quota": 11,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "ATH",
-  "Quota": 14,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "ATL",
-  "Quota": 3,
+  "Quota": 16,
   "Year": "2023",
   "Month": "05"
  },
@@ -311,253 +293,169 @@
  },
  {
   "Dest": "AYT",
-  "Quota": 12,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "BCN",
   "Quota": 15,
   "Year": "2023",
   "Month": "05"
  },
  {
+  "Dest": "BCN",
+  "Quota": 18,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
   "Dest": "BEG",
-  "Quota": 3,
+  "Quota": 4,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "BER",
-  "Quota": 20,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "BHX",
-  "Quota": 3,
+  "Quota": 25,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "BIO",
-  "Quota": 5,
+  "Quota": 6,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "BKK",
-  "Quota": 7,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "BLL",
-  "Quota": 1,
+  "Quota": 8,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "BLQ",
-  "Quota": 4,
+  "Quota": 5,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "BOM",
-  "Quota": 3,
+  "Quota": 4,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "BOS",
-  "Quota": 3,
+  "Quota": 4,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "BRE",
-  "Quota": 7,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "BRI",
-  "Quota": 3,
+  "Quota": 9,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "BRU",
-  "Quota": 11,
+  "Quota": 13,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "BUD",
-  "Quota": 6,
+  "Quota": 8,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "CAI",
-  "Quota": 4,
+  "Quota": 5,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "CDG",
-  "Quota": 16,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "CFU",
-  "Quota": 2,
+  "Quota": 20,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "CGN",
-  "Quota": 10,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "CHQ",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "CLJ",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "CLT",
-  "Quota": 7,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "CPH",
-  "Quota": 10,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "CTA",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DBV",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DEB",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DEL",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DEN",
-  "Quota": 7,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DJE",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DOH",
-  "Quota": 7,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DRS",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DTM",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DTW",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DUB",
-  "Quota": 7,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DUS",
-  "Quota": 23,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "DXB",
   "Quota": 12,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "EDI",
-  "Quota": 1,
+  "Dest": "CLT",
+  "Quota": 8,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "ESB",
-  "Quota": 2,
+  "Dest": "CPH",
+  "Quota": 13,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "CTA",
+  "Quota": 5,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "DEL",
+  "Quota": 4,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "DEN",
+  "Quota": 8,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "DOH",
+  "Quota": 8,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "DRS",
+  "Quota": 4,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "DUB",
+  "Quota": 9,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "DUS",
+  "Quota": 27,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "DXB",
+  "Quota": 14,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "EWR",
-  "Quota": 6,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "FAO",
-  "Quota": 2,
+  "Quota": 8,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "FCO",
-  "Quota": 11,
+  "Quota": 13,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "FLR",
-  "Quota": 4,
+  "Quota": 5,
   "Year": "2023",
   "Month": "05"
  },
@@ -568,236 +466,110 @@
   "Month": "05"
  },
  {
-  "Dest": "FNC",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
   "Dest": "FRA",
-  "Quota": 22,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "FUE",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "GDN",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "GIG",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "GOA",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "GOT",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "GRZ",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "GVA",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "HAJ",
-  "Quota": 8,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "HAM",
   "Quota": 26,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "HEL",
+  "Dest": "GOT",
+  "Quota": 5,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "GVA",
+  "Quota": 5,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "HAJ",
   "Quota": 10,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "HER",
-  "Quota": 6,
+  "Dest": "HAM",
+  "Quota": 31,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "HND",
-  "Quota": 5,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "HRG",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "IAD",
-  "Quota": 6,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "IAH",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "IBZ",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "ICN",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "IST",
-  "Quota": 8,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "JED",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "JFK",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "JMK",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "JTR",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "KEF",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "KGS",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "KIX",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "KRK",
-  "Quota": 5,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "KVA",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "LAX",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "LCA",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "LEJ",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "LGW",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "LHR",
-  "Quota": 23,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "LIN",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "LIS",
+  "Dest": "HEL",
   "Quota": 12,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "LJU",
-  "Quota": 1,
+  "Dest": "HER",
+  "Quota": 7,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "LPA",
-  "Quota": 2,
+  "Dest": "HND",
+  "Quota": 6,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "HRG",
+  "Quota": 5,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "IAD",
+  "Quota": 8,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "ICN",
+  "Quota": 4,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "IST",
+  "Quota": 10,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "KRK",
+  "Quota": 6,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "LAX",
+  "Quota": 4,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "LGW",
+  "Quota": 5,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "LHR",
+  "Quota": 28,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "LIS",
+  "Quota": 14,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "LUX",
-  "Quota": 4,
+  "Quota": 5,
   "Year": "2023",
   "Month": "05"
  },
@@ -809,265 +581,133 @@
  },
  {
   "Dest": "MAD",
-  "Quota": 15,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "MAN",
-  "Quota": 5,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "MCT",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "MLA",
-  "Quota": 5,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "MRS",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "MXP",
-  "Quota": 5,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "NAP",
-  "Quota": 6,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "NCE",
-  "Quota": 6,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "OLB",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "OPO",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "ORD",
-  "Quota": 7,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "ORY",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "OSL",
-  "Quota": 7,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "OTP",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "PAD",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "PMI",
   "Quota": 18,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "PMO",
-  "Quota": 2,
+  "Dest": "MAN",
+  "Quota": 6,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "POZ",
-  "Quota": 2,
+  "Dest": "MLA",
+  "Quota": 6,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "PRG",
-  "Quota": 3,
+  "Dest": "MRS",
+  "Quota": 5,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "MXP",
+  "Quota": 6,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "NAP",
+  "Quota": 7,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "NCE",
+  "Quota": 8,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "OPO",
+  "Quota": 5,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "ORD",
+  "Quota": 9,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "OSL",
+  "Quota": 9,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "OTP",
+  "Quota": 5,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "PMI",
+  "Quota": 21,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "PRN",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "PVG",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "PVK",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "RHO",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "RIX",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "RMF",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "RZE",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "SAN",
-  "Quota": 1,
+  "Quota": 4,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "SAW",
-  "Quota": 5,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "SBZ",
-  "Quota": 2,
+  "Quota": 7,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "SFO",
-  "Quota": 6,
+  "Quota": 8,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "SIN",
-  "Quota": 6,
+  "Quota": 7,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "SKG",
-  "Quota": 5,
+  "Quota": 7,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "SOF",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "SPU",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "STR",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "SUF",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "SVQ",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "TBS",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "TFS",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "TIA",
-  "Quota": 4,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "TLL",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "TLS",
   "Quota": 5,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "TMP",
-  "Quota": 1,
+  "Dest": "SPU",
+  "Quota": 5,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "TPE",
-  "Quota": 2,
+  "Dest": "STR",
+  "Quota": 5,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "TIA",
+  "Quota": 5,
+  "Year": "2023",
+  "Month": "05"
+ },
+ {
+  "Dest": "TLS",
+  "Quota": 6,
   "Year": "2023",
   "Month": "05"
  },
@@ -1078,74 +718,26 @@
   "Month": "05"
  },
  {
-  "Dest": "TSR",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "TUN",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
   "Dest": "VCE",
-  "Quota": 5,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "VIE",
-  "Quota": 8,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "VLC",
-  "Quota": 2,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "VNO",
-  "Quota": 1,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "VRN",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "WAW",
   "Quota": 6,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "WRO",
-  "Quota": 2,
+  "Dest": "VIE",
+  "Quota": 10,
   "Year": "2023",
   "Month": "05"
  },
  {
-  "Dest": "XRY",
-  "Quota": 1,
+  "Dest": "WAW",
+  "Quota": 7,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "YUL",
-  "Quota": 3,
-  "Year": "2023",
-  "Month": "05"
- },
- {
-  "Dest": "YVR",
-  "Quota": 2,
+  "Quota": 4,
   "Year": "2023",
   "Month": "05"
  },
@@ -1157,13 +749,13 @@
  },
  {
   "Dest": "ZAG",
-  "Quota": 3,
+  "Quota": 4,
   "Year": "2023",
   "Month": "05"
  },
  {
   "Dest": "ZRH",
-  "Quota": 7,
+  "Quota": 8,
   "Year": "2023",
   "Month": "05"
  }
