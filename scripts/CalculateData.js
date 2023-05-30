@@ -118,20 +118,20 @@ function getDOOP(date) //"07-02-2023"
 function isNotThePastDate(date) //"07-02-2023"
 {
   var current_day_of_month =  new Date().getDate();
+  var current_month =  new Date().getMonth()+1;
 
   var parts = date.split("-")
-  var flight_day = parts[0];
-  var Month = parts[1];
-   
-  var result = (flight_day >= current_day_of_month);
-
+  var flight_day = parseInt(parts[0]);
+  var Month = parseInt(parts[1]);
+  
+  var result = ((flight_day >= current_day_of_month) || (Month>current_month));
   //console.log("flight_day", date);
   //console.log("current_day_of_month", current_day_of_month);
   return (result);
 }
 
 function CalculateDOOP() {
-  for (i = 0; i < quota_data.length; i++) {
+for (i = 0; i < quota_data.length; i++) {
     quota_data[i].doop = " ";
     quota_data[i].remaining_flights = 0;
     var mon =0;
@@ -146,6 +146,11 @@ function CalculateDOOP() {
     for (j = 0; j < this_month_flight_list.length; j++) {
       if (quota_data[i].Dest.toUpperCase() == this_month_flight_list[j].Dest.toUpperCase()) 
       {
+        if (quota_data[i].Dest.toUpperCase() == "BOS")
+        {
+          console.log("this_month_flight_list[j]: ", this_month_flight_list[j])
+          console.log("remaining_flights: ", remaining_flights)
+        }
         //get remaining_flights
         if (isNotThePastDate(this_month_flight_list[j].Date)) {
           remaining_flights++;

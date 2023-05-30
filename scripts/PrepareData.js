@@ -103,7 +103,7 @@ function isvalid_id(id)
   return valid;
 }
 function prepareInterviewData() {
-  quota_data_temp = JSON.parse(Destination_Quota);
+  var quota_data_temp = JSON.parse(Destination_Quota);
   removed_ids_data = JSON.parse(removed_ids);
 
   var interview_data_temp  = JSON.parse(interview_data_raw);
@@ -188,7 +188,6 @@ function prepareInterviewData() {
     }
 			   
   }
-
     //add quota data
     //empty the list
   daily_plan_data = [];
