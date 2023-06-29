@@ -5,6 +5,7 @@
   
 		<script src="data/quota_data.js"></script>
 		<script src="data/MUC_departures_flight_list.js"></script>
+    <script src="data/MUC_Gate_Info.js"></script>
     <script src="data/invalid_cases.js"></script>
     <script src="scripts/PrepareData.js"></script>
 		<script src="scripts/CalculateData.js"></script>
@@ -70,11 +71,12 @@
         var data = new google.visualization.DataTable();
 
         data.addColumn('number', 'TER');
+        data.addColumn('string', 'Gate Area');
+        data.addColumn('string', 'Gate');
         data.addColumn('string', 'Time');
         data.addColumn('string', 'Flight');
         data.addColumn('string', 'To');
         //data.addColumn('string', 'Via');
-        //data.addColumn('string', 'DOOP');
         data.addColumn('number', 'Remaining Flights');
         data.addColumn('number', 'Quota');
         data.addColumn('number', 'Completed');
@@ -87,7 +89,8 @@
         for (i = 0; i < daily_plan_data.length; i++) {
           var row = daily_plan_data[i];
             { 
-                data.addRows([[row.TER, row.Date_Time, 
+                data.addRows([[row.TER, row.GateArea, row.Gate,
+                row.Date_Time, 
                 row.Flight, row.DestName, 
                 //row.Next, 
                 //row.doop, 
@@ -119,10 +122,10 @@
 
         //create fiter
         var options = {
-          'filterColumnLabel': 'TER',
+          'filterColumnLabel': 'Gate Area',
           "ui": {"label": "", 
                 "labelStacking": 'horizotal',
-                "caption": "Select terminal",
+                "caption": "Select Gate Area",
                 }
         };
         
@@ -139,7 +142,7 @@
           'options': {
             'allowHtml': true, 
             'cssClassNames': {tableCell: 'table-font', headerRow: 'table-font', headerCell: 'googleHeaderCell' },
-            'sortColumn': 1, //time
+            'sortColumn': 3, //time
             'showRowNumber': false, 'width': '100%', 'height': '100%'
           }
         });

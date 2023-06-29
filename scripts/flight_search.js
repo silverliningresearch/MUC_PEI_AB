@@ -105,7 +105,6 @@ function load_flight_list() {
       }
     }
   }
-  console.log("flightList: ", flightList);
 }
 
 function update_drop_box_list() {

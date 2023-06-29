@@ -108,6 +108,7 @@ function prepareInterviewData() {
 
   var interview_data_temp  = JSON.parse(interview_data_raw);
   var flight_list_temp  = JSON.parse(MUC_Departures_Flight_List_Raw);
+  var gate_info  = JSON.parse(MUC_Gate_Info);
 
   initCurrentTimeVars();	
 
@@ -195,6 +196,18 @@ function prepareInterviewData() {
   
   for (i = 0; i < today_flight_list.length; i++) {
     let flight = today_flight_list[i];
+
+    //get gate info
+    for (j = 0; j < gate_info.length; j++) {
+      let gate = gate_info[j];
+      if ((gate.Flight == flight.Flight) && (gate.Date == flight.Date))
+      {
+        flight.GateArea = gate.GateArea;
+        flight.Gate = gate.Gate;
+        break;
+      }
+    }
+
     for (j = 0; j < quota_data.length; j++) {
       let quota = quota_data[j];
       if ((quota.Dest == flight.Dest) && (quota.Quota>0))
@@ -205,4 +218,6 @@ function prepareInterviewData() {
        }
     }
   }
+
+  console.log("daily_plan_data:", daily_plan_data)
 }
