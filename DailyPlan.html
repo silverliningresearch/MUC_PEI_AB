@@ -122,6 +122,20 @@
         document.getElementById('dashboard_div'));
 
         //create fiter
+        var options_Terminal = {
+          'filterColumnLabel': 'TER',
+          "ui": {"label": "", 
+                "labelStacking": 'horizotal',
+                "caption": "Select Terminal",
+                }
+        };
+
+        var tableFilter_Terminal = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'filter_terminal',
+          'options': options_Terminal
+        });
+
         var options = {
           'filterColumnLabel': 'Gate Area',
           "ui": {"label": "", 
@@ -148,7 +162,7 @@
           }
         });
 
-        dashboard.bind(tableFilter, tableChart);
+        dashboard.bind([tableFilter_Terminal, tableFilter], tableChart);
 
         var view = new google.visualization.DataView(data);
         view.hideColumns([priority_col, priority_col-1]); //hide priority one
@@ -199,8 +213,10 @@
 
     <div id="dashboard_div">
       <!--Divs that will hold each control and chart-->
+      <div id="filter_terminal"></div>
+      </br>
       <div id="filter_div" style="font-size: 15px"> </div>
-    </br>
+      </br>
       <div id="table_div"></div>
     </div>
 
