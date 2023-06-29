@@ -76,10 +76,10 @@
         CalculateArrival();
         var data = new google.visualization.DataTable();
 
+        data.addColumn('string', 'Time');
         data.addColumn('number', 'TER');
         data.addColumn('string', 'Gate Area');
         data.addColumn('string', 'Gate');        
-        data.addColumn('string', 'Time');
         data.addColumn('string', 'Flight');
         data.addColumn('string', 'To');
         //data.addColumn('string', 'Via');
@@ -96,8 +96,9 @@
         for (i = 0; i < daily_plan_data.length; i++) {
           var row = daily_plan_data[i];
             { 
-                data.addRows([[row.TER, row.GateArea, row.Gate,
+                data.addRows([[
                 row.Date_Time, 
+                row.TER, row.GateArea, row.Gate,
                 row.Flight, row.DestName, 
                 //row.Next, 
                 //row.doop, 
@@ -149,7 +150,7 @@
           'options': {
             'allowHtml': true, 
             'cssClassNames': {tableCell: 'table-font', headerRow: 'table-font', headerCell: 'googleHeaderCell' },
-            'sortColumn': 3, //time
+            'sortColumn': 0, //time
             'showRowNumber': false, 'width': '100%', 'height': '100%'
           }
         });
