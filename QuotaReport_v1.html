@@ -3,12 +3,12 @@
 		<title>Quota Report - MUC PEI AB Survey</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   
-		<script src="data/quota_data_v2.js"></script>
+		<script src="data/quota_data_v1.js"></script>
     <script src="data/invalid_cases.js"></script>
     <script src="data/MUC_departures_flight_list.js"></script>		
-    <script src="scripts_v2/PrepareData.js"></script>
-		<script src="scripts_v2/CalculateData.js"></script>
-    <script src="scripts_v2/CalculateDataArrival.js"></script>
+    <script src="scripts_v1/PrepareData.js"></script>
+		<script src="scripts_v1/CalculateData.js"></script>
+    <script src="scripts_v1/CalculateDataArrival.js"></script>
 
     <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_alc/MUC_PEI_AB/data/interview_data.js"></script>
     <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_alc/MUC_PEI_AB/data/interview_data_arr.js"></script>
@@ -62,16 +62,8 @@
         CalculateArrival();
         var data = new google.visualization.DataTable();
 
-        var quota_label;
-        if (report_version == 2) {
-          quota_label = "Airport-Airline";
-        }
-        else {
-          quota_label = "Destination";
-        }
-        
         //define header
-        data.addColumn('string', quota_label);
+        data.addColumn('string', 'Destination');
         data.addColumn('number', 'Remaining Flights');
         data.addColumn('number', 'Quota');
         data.addColumn('number', 'Completed');
@@ -83,7 +75,7 @@
           var row = quota_data[i];
           data.addRows([
           [
-            row.quota_id, 
+            row.Dest, 
             Number(row.remaining_flights),
             Number(row.Quota),
             Number(row.Completed), 
@@ -102,7 +94,7 @@
           'controlType': 'CategoryFilter',
           'containerId': 'filter_div',
           'options': {
-            'filterColumnLabel': quota_label
+            'filterColumnLabel': 'Destination'
           }
         });
   
@@ -160,7 +152,6 @@
       <label for="year_month">Data collection period:</label>
       <select id="year_month" onchange="drawTable()">
         <option value="current-month">current month
-        <option value="08-2023">08-2023          
         <option value="07-2023">07-2023          
         <option value="06-2023">06-2023
         <option value="05-2023">05-2023

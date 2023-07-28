@@ -1,15 +1,15 @@
 <html>
     <head>
-		<title>Daily Plan - MUC PEI AB Survey</title>
+		<title>MUC PEI AB Survey</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   
-    <script src="data/quota_data_v2.js"></script>
+		<script src="data/quota_data_v1.js"></script>
+		<script src="data/MUC_departures_flight_list.js"></script>
     <script src="data/invalid_cases.js"></script>
-    <script src="data/MUC_departures_flight_list.js"></script>		
-    <script src="scripts_v2/PrepareData.js"></script>
-		<script src="scripts_v2/CalculateData.js"></script>
-    <script src="scripts_v2/CalculateDataArrival.js"></script>
-
+    <script src="scripts_v1/PrepareData.js"></script>
+		<script src="scripts_v1/CalculateData.js"></script>
+    <script src="scripts_v1/flight_search.js"></script>
+    <script src="scripts_v1/CalculateDataArrival.js"></script>
 
     <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_alc/MUC_PEI_AB/data/interview_data.js"></script>
     <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_alc/MUC_PEI_AB/data/interview_data_arr.js"></script>
@@ -49,6 +49,12 @@
       .red {background-color: #f44336;;} /* Red */
 
       .blue {background-color: #0099CC;;} /* Blue */ 
+
+
+
+      h1 {text-align: center;}
+
+
     </style>
 
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -73,10 +79,11 @@
         data.addColumn('string', 'Time');
         data.addColumn('number', 'TER');
         data.addColumn('string', 'Gate Area');
-        data.addColumn('string', 'Gate');
+        data.addColumn('string', 'Gate');        
         data.addColumn('string', 'Flight');
         data.addColumn('string', 'To');
         //data.addColumn('string', 'Via');
+        //data.addColumn('string', 'DOOP');
         data.addColumn('number', 'Remaining Flights');
         data.addColumn('number', 'Quota');
         data.addColumn('number', 'Completed');
@@ -121,8 +128,8 @@
         var dashboard = new google.visualization.Dashboard(
         document.getElementById('dashboard_div'));
 
-        //create fiter
-        var options_Terminal = {
+          //create fiter
+          var options_Terminal = {
           'filterColumnLabel': 'TER',
           "ui": {"label": "", 
                 "labelStacking": 'horizotal',
@@ -135,7 +142,7 @@
           'containerId': 'filter_terminal',
           'options': options_Terminal
         });
-
+        
         var options = {
           'filterColumnLabel': 'Gate Area',
           "ui": {"label": "", 
@@ -143,7 +150,7 @@
                 "caption": "Select Gate Area",
                 }
         };
-        
+
         var tableFilter = new google.visualization.ControlWrapper({
           'controlType': 'CategoryFilter',
           'containerId': 'filter_div',
@@ -201,11 +208,35 @@
       window.location.href = url;
     }
 
+      window.addEventListener('load', function () {
+      load_flight_list();
+      document.getElementById('inputFlightCodeID').value = "";
+    });
+
 
     </script>
   </head>
   <body>
-    <h1>Daily Plan - MUC PEI AB Survey</h1>
+    </br></br></br>
+    <div>
+      <input list="flightDropBoxList" 
+        onchange="select_flight()"  
+        onkeyup="update_drop_box_list()" 
+        placeholder="Please key in flight number:"
+        name="inputFlightCodeID" id="inputFlightCodeID" >
+      <datalist id="flightDropBoxList">
+    </div>  
+  
+    <div>
+      </br></br></br> </br></br>
+      <button onclick="start_new_interview()" class="button blue">Start survey</button>
+      </br></br>
+    </div>
+
+    
+    <div style="background-color:#66CCFF;">
+      </br>
+    </div>
 
     <h5 id="download_time"></h5>
     <h4 id="overall_arrival_status"></h4>

@@ -1,4 +1,4 @@
-var total_arrival_quota = 250;
+var total_arrival_quota;
 var total_arrival_completed;
 var total_arrival_completed_percent;
 
