@@ -79,8 +79,10 @@
 
       function drawTable() {
         CalculateAirportAirLineReport();
+        CalculateArrival();
         //to merge ASQ
         CalculateAirportAirLineReport_asq();
+
         for (i = 0; i < daily_plan_data.length; i++) {
           daily_plan_data[i].Survey = "PEI AB"; 
         }
@@ -89,10 +91,6 @@
           daily_plan_data.push(daily_plan_data_asq[i]);
         }
 
-        console.log("daily_plan_data: ", daily_plan_data);
-
-        CalculateArrival();
-        
         var data = new google.visualization.DataTable();
 
         data.addColumn('string', 'Survey');
@@ -218,7 +216,7 @@
         dashboard.draw(view);
 
         //Update time info
-        document.getElementById("download_time").innerHTML = "Data updated at: " + download_time;
+        //document.getElementById("download_time").innerHTML = "Data updated at: " + download_time;
 
         //overall_status
         var overall_arrival_status =  "PEI AN: " + "Total quota: " + total_arrival_quota;
@@ -229,9 +227,16 @@
         //overall_status
         var overall_status =  "PEI AB: " + "Total quota: " + total_quota;
         overall_status += " - Total completed: " + total_completed ;
-        overall_status +=  " (" + total_completed_percent +  "%)";
+        overall_status +=  " (" + total_completed_percent +  "%)" + " | " + "Data updated at: " + download_time;;
         //overall_status += " - Quota completed: " + total_quota_completed;
         document.getElementById("overall_status").innerHTML =overall_status;
+
+        //overall_status
+        var overall_status_asq =  "ASQ: " + "Total quota: " + total_quota_asq;
+        overall_status_asq += " - Total completed: " + total_completed_asq ;
+        overall_status_asq +=  " (" + total_completed_percent_asq +  "%)" + " | " + "Data updated at: " + download_time_asq;;
+        //overall_status += " - Quota completed: " + total_quota_completed;
+        document.getElementById("overall_status_asq").innerHTML =overall_status_asq;
       }
     
       function start_new_interview() {
@@ -279,9 +284,11 @@
       </br>
     </div>
 
-    <h5 id="download_time"></h5>
+    <!-- <h5 id="download_time"></h5> -->
     <h4 id="overall_arrival_status"></h4>
     <h4 id="overall_status"></h4>
+
+    <h4 id="overall_status_asq"></h4>
 
     <div id="dashboard_div">
       <!--Divs that will hold each control and chart-->
