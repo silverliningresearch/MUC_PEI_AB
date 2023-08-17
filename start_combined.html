@@ -56,7 +56,8 @@
 
       .blue {background-color: #0099CC;;} /* Blue */ 
 
-
+      .headerbackground {background-color: #66CCFF;;} /* Blue */ 
+      
 
       h1 {text-align: center;}
 
@@ -202,7 +203,8 @@
           'containerId': 'table_div',
           'options': {
             'allowHtml': true, 
-            'cssClassNames': {tableCell: 'table-font', headerRow: 'table-font', headerCell: 'googleHeaderCell' },
+            //'cssClassNames': {tableCell: 'table-font', headerRow: 'table-font', headerCell: 'googleHeaderCell' },
+            'cssClassNames': {tableCell: 'table-font', headerRow: 'headerbackground', headerCell: 'googleHeaderCell' },
             'sortColumn': 1, //time
             'showRowNumber': false, 'width': '100%', 'height': '100%'
           }
@@ -268,14 +270,14 @@
       <input list="flightDropBoxList" 
         onchange="select_flight()"  
         onkeyup="update_drop_box_list()" 
-        placeholder="Please key in flight number:"
+        placeholder="Please key in flight number to find a flight for PEI AB:"
         name="inputFlightCodeID" id="inputFlightCodeID" >
       <datalist id="flightDropBoxList">
     </div>  
   
     <div>
       </br></br></br> </br></br>
-      <button onclick="start_new_interview()" class="button blue">Start survey</button>
+      <button onclick="start_new_interview()" class="button blue">Start PEI AB Survey</button>
       </br></br>
     </div>
 
