@@ -1,6 +1,5 @@
      let MUC_Departures_Flight_List_Raw = ` 
 [ 
-    
     {
      "Date": "27-07-2023",
      "Time": "1450",
