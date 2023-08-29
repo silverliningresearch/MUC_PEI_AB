@@ -236,6 +236,7 @@ function prepareInterviewData() {
   daily_plan_data = [];
   daily_plan_data.length = 0;
   
+
   for (i = 0; i < today_flight_list.length; i++) {
     let flight = today_flight_list[i];
 

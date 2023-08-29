@@ -91,7 +91,12 @@ function CalculateAirportAirLineReport_asq() {
     daily_plan_data_asq.push(row);
     if((i< daily_plan_data_temp.length*0.25 ) || (row.remaining_flights<4))
     {
-      row.Priority = 1;
+      //-	Flights with a quota target less than 4 should never be red
+      //-	Flights with a completion percentage of ≥85% should never be red
+      if ((row.Quota>=4) && (row.Completed_percent<=85))
+      {
+        row.Priority = 1;
+      }
     }
   }
 }
