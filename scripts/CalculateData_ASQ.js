@@ -85,16 +85,18 @@ function CalculateAirportAirLineReport_asq() {
     return parseFloat(b.Prioritisation_score) - parseFloat(a.Prioritisation_score);
   });
 
+  var count  = 0;
   for (i = 0; i < daily_plan_data_temp.length; i++) {
     row = daily_plan_data_temp[i];
     row.Priority = 0;
     daily_plan_data_asq.push(row);
-    if((i< daily_plan_data_temp.length*0.25 ) || (row.remaining_flights<4))
+    if((count < daily_plan_data_temp.length*0.25 ) || (row.remaining_flights<4))
     {
       //-	Flights with a quota target less than 4 should never be red
       //-	Flights with a completion percentage of ≥85% should never be red
       if ((row.Quota>=4) && (row.Completed_percent<=85))
       {
+        count++; //hightlight 25% of the total list
         row.Priority = 1;
       }
     }
