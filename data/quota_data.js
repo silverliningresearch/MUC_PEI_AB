@@ -2724,10 +2724,15 @@
   "Month": "08"
  },
  
- 
  {
   "quota_id": "ATH - A3",
   "Quota": 7,
+  "Year": "2023",
+  "Month": "09"
+ },
+ {
+  "quota_id": "HER - A3",
+  "Quota": 3,
   "Year": "2023",
   "Month": "09"
  },
@@ -2871,7 +2876,7 @@
  },
  {
   "quota_id": "TRN - EN",
-  "Quota": 5,
+  "Quota": 6,
   "Year": "2023",
   "Month": "09"
  },
@@ -2889,7 +2894,7 @@
  },
  {
   "quota_id": "CGN - EW",
-  "Quota": 5,
+  "Quota": 6,
   "Year": "2023",
   "Month": "09"
  },
@@ -2925,7 +2930,7 @@
  },
  {
   "quota_id": "LGW - EZY",
-  "Quota": 6,
+  "Quota": 5,
   "Year": "2023",
   "Month": "09"
  },
@@ -2991,7 +2996,7 @@
  },
  {
   "quota_id": "BEG - LH",
-  "Quota": 5,
+  "Quota": 3,
   "Year": "2023",
   "Month": "09"
  },
@@ -3033,7 +3038,7 @@
  },
  {
   "quota_id": "BRE - LH",
-  "Quota": 12,
+  "Quota": 10,
   "Year": "2023",
   "Month": "09"
  },
@@ -3063,7 +3068,7 @@
  },
  {
   "quota_id": "CGN - LH",
-  "Quota": 12,
+  "Quota": 10,
   "Year": "2023",
   "Month": "09"
  },
@@ -3111,7 +3116,7 @@
  },
  {
   "quota_id": "DUS - LH",
-  "Quota": 26,
+  "Quota": 24,
   "Year": "2023",
   "Month": "09"
  },
@@ -3135,7 +3140,7 @@
  },
  {
   "quota_id": "FMO - LH",
-  "Quota": 6,
+  "Quota": 5,
   "Year": "2023",
   "Month": "09"
  },
@@ -3159,7 +3164,7 @@
  },
  {
   "quota_id": "HAJ - LH",
-  "Quota": 14,
+  "Quota": 13,
   "Year": "2023",
   "Month": "09"
  },
@@ -3249,7 +3254,7 @@
  },
  {
   "quota_id": "LYS - LH",
-  "Quota": 6,
+  "Quota": 5,
   "Year": "2023",
   "Month": "09"
  },
@@ -3405,7 +3410,7 @@
  },
  {
   "quota_id": "VIE - LH",
-  "Quota": 5,
+  "Quota": 3,
   "Year": "2023",
   "Month": "09"
  },
@@ -3453,7 +3458,7 @@
  },
  {
   "quota_id": "ZRH - LH",
-  "Quota": 7,
+  "Quota": 6,
   "Year": "2023",
   "Month": "09"
  },
@@ -3476,14 +3481,14 @@
   "Month": "09"
  },
  {
-  "quota_id": "VIE - OS",
-  "Quota": 8,
+  "quota_id": "HND - NH",
+  "Quota": 3,
   "Year": "2023",
   "Month": "09"
  },
  {
-  "quota_id": "AYT - PC",
-  "Quota": 3,
+  "quota_id": "VIE - OS",
+  "Quota": 8,
   "Year": "2023",
   "Month": "09"
  },
@@ -3495,7 +3500,7 @@
  },
  {
   "quota_id": "DOH - QR",
-  "Quota": 9,
+  "Quota": 10,
   "Year": "2023",
   "Month": "09"
  },
@@ -3514,6 +3519,12 @@
  {
   "quota_id": "BKK - TG",
   "Quota": 6,
+  "Year": "2023",
+  "Month": "09"
+ },
+ {
+  "quota_id": "AYT - TI",
+  "Quota": 3,
   "Year": "2023",
   "Month": "09"
  },
@@ -3631,6 +3642,7 @@
   "Year": "2023",
   "Month": "09"
  }
+ 
 ]          
      
     `;
