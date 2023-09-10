@@ -175,7 +175,7 @@ function select_flight_v2(result_data) {
   var today = getToDate();
   if (result_data.Date === today){
     found = true;
-    flightForInterview = flightList[selectedFlight].Show;
+    flightForInterview = flightList[selectedFlight];
     console.log("currentFlight_v2: ", flightForInterview);
   }
   if (!found) {
