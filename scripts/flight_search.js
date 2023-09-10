@@ -158,7 +158,7 @@ function select_flight() {
       //store detail data here
       //Search engine to produce Flight no., Airline, Destination, Via - to be added later
       flightForInterview = currentFlight;
-      console.log("currentFlight: ", flightForInterview);
+      console.log("currentFlight_v1: ", flightForInterview);
       found = true;
       break;
     }
@@ -167,4 +167,20 @@ function select_flight() {
     alert("Please select a flight number from the list.");
   }
 }
+
+
+function select_flight_v2(result_data) {
+  var selectedFlight = document.getElementById('inputFlightCodeID').value;
+  var found = false;
+  var today = getToDate();
+  if (result_data.Date === today){
+    found = true;
+    flightForInterview = flightList[selectedFlight].Show;
+    console.log("currentFlight_v2: ", flightForInterview);
+  }
+  if (!found) {
+    alert("Please select a flight number from the list.");
+  }
+}
+
 

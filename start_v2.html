@@ -1,0 +1,387 @@
+<html>
+    <head>
+		<title>MUC PEI AB Survey</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  
+    <script src="data/quota_data.js"></script>
+    <script src="data/invalid_cases.js"></script>
+    <script src="data/MUC_departures_flight_list.js"></script>		
+    <script src="scripts/PrepareData.js"></script>
+		<script src="scripts/CalculateData.js"></script>
+    <script src="scripts/CalculateDataArrival.js"></script>
+    <script src="scripts/flight_search.js"></script>
+
+    <script src="data/Quota_Data_ASQ.js"></script>
+    <script src="scripts/PrepareData_ASQ.js"></script>
+    <script src="scripts/CalculateData_ASQ.js"></script>
+    
+    <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_asq/MUC/Departures/interview_statistics_asq.js"></script>
+    
+    <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_alc/MUC_PEI_AB/data/interview_data.js"></script>
+    <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_alc/MUC_PEI_AB/data/interview_data_arr.js"></script>
+    <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_alc/MUC_PEI_AB/data/MUC_Gate_Info.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <link href="css/styles_v2.css" rel ="stylesheet" type="text/css" />
+    <style>
+      .table-font {
+        font-size: 16px;
+        /* height: 18px; */
+      }
+
+      .filter-font {
+        font-size: 16px;
+        /* height: 18px; */
+      }
+       .button {
+        border: none;
+        color: white;
+        padding: 15px 15px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        width: 200px;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin: 0;
+        position: relative;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+      .red {background-color: #f44336;;} /* Red */
+
+      .blue {background-color: #0099CC;;} /* Blue */ 
+
+      .headerbackground {background-color: #66CCFF;;} /* Blue */ 
+      
+
+      h1 {text-align: center;}
+
+
+    </style>
+
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      function isNextDay()
+      {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        //?nextday=true
+        return(urlParams.has('nextday'));
+      }
+      //google.charts.load('current', {'packages':['table']});
+      google.charts.load('current', {'packages':['table','corechart', 'controls']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        CalculateAirportAirLineReport();
+        CalculateArrival();
+        //to merge ASQ
+        CalculateAirportAirLineReport_asq();
+
+        for (i = 0; i < daily_plan_data.length; i++) {
+          daily_plan_data[i].Survey = "PEI AB"; 
+        }
+        for (i = 0; i < daily_plan_data_asq.length; i++) {
+          daily_plan_data_asq[i].Survey = "ASQ"; 
+          daily_plan_data.push(daily_plan_data_asq[i]);
+        }
+
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('string', 'Survey');
+        data.addColumn('string', 'Time');
+        data.addColumn('number', 'TER');
+        data.addColumn('string', 'Gate Area');
+        data.addColumn('string', 'Gate');        
+        data.addColumn('string', 'Flight');
+        data.addColumn('string', 'To');
+        //data.addColumn('string', 'Via');
+        //data.addColumn('string', 'DOOP');
+        data.addColumn('number', 'Remaining Flights');
+        data.addColumn('number', 'Quota');
+        data.addColumn('number', 'Completed');
+				data.addColumn('number', 'Missing');
+        data.addColumn('number', 'Completed %');
+        data.addColumn('number', 'Priority Score');
+        data.addColumn('number', 'Priority');
+        
+        //add data
+        for (i = 0; i < daily_plan_data.length; i++) {
+          var row = daily_plan_data[i];
+            { 
+                data.addRows([[
+                row.Survey, 
+                row.Date_Time, 
+                row.TER, row.GateArea, row.Gate,
+                row.Flight, row.DestName, 
+                //row.Next, 
+                //row.doop, 
+                Number(row.remaining_flights), 
+                Number(row.Quota), Number(row.Completed), Number(row.Difference), 
+                Number(row.Completed_percent), 
+                Number(row.Prioritisation_score), 
+                Number(row.Priority)]]);
+            }
+          }
+
+        //highlight priority one
+        var priority_col = data.getNumberOfColumns()-1; //last one
+        for (var i = 0; i < data.getNumberOfRows(); i++) {
+          for (j=0; j < data.getNumberOfColumns(); j++) {
+            if (data.getValue(i, priority_col) ==1) 
+            {
+              data.setProperty(i, j, 'style', 'background-color:#FFCCCB');
+            }
+            else {
+              //data.setProperty(i, j, 'style', 'background-color:white; font-size: 15px');
+            }
+          }
+        }
+
+        //create a dashboard.
+        var dashboard = new google.visualization.Dashboard(
+        document.getElementById('dashboard_div'));
+
+        //create survey  fiter
+        var options_Survey = {
+          'filterColumnLabel': 'Survey',
+          "ui": {"label": "", 
+          "labelStacking": 'horizotal',
+          "caption": "Select Survey:",
+          },
+
+        };
+
+        var tableFilter_Survey = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'filter_survey',
+          'options': options_Survey,
+          state: {
+              selectedValues: ['PEI AB']
+          }
+        });
+        
+
+          //create fiter terminal 
+          var options_Terminal = {
+          'filterColumnLabel': 'TER',
+          "ui": {"label": "", 
+                "labelStacking": 'horizotal',
+                "caption": "Select Terminal",
+                }
+        };
+
+        var tableFilter_Terminal = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'filter_terminal',
+          'options': options_Terminal
+        });
+        
+        var options = {
+          'filterColumnLabel': 'Gate Area',
+          "ui": {"label": "", 
+                "labelStacking": 'horizotal',
+                "caption": "Select Gate Area",
+                }
+        };
+
+        var tableFilter = new google.visualization.ControlWrapper({
+          'controlType': 'CategoryFilter',
+          'containerId': 'filter_div',
+          'options': options
+        });
+
+        // Create table
+        var tableChart = new google.visualization.ChartWrapper({
+          'chartType': 'Table',
+          'containerId': 'table_div',
+          'options': {
+            'allowHtml': true, 
+            //'cssClassNames': {tableCell: 'table-font', headerRow: 'table-font', headerCell: 'googleHeaderCell' },
+            'cssClassNames': {tableCell: 'table-font', headerRow: 'headerbackground', headerCell: 'googleHeaderCell' },
+            'sortColumn': 1, //time
+            'showRowNumber': false, 'width': '100%', 'height': '100%'
+          }
+        });
+
+        dashboard.bind([tableFilter_Survey, tableFilter_Terminal, tableFilter], tableChart);
+
+        var view = new google.visualization.DataView(data);
+        view.hideColumns([priority_col, priority_col-1]); //hide priority one
+        //document.getElementById("filter_div").style.display = "none";
+        dashboard.draw(view);
+
+        //Update time info
+        //document.getElementById("download_time").innerHTML = "Data updated at: " + download_time;
+
+        //overall_status
+        var overall_arrival_status =  "PEI AN: " + "Total quota: " + total_arrival_quota;
+        overall_arrival_status += " - Total completed: " + total_arrival_completed;
+        overall_arrival_status +=  " (" + total_arrival_completed_percent +  "%)";
+        document.getElementById("overall_arrival_status").innerHTML =overall_arrival_status;
+
+        //overall_status
+        var overall_status =  "PEI AB: " + "Total quota: " + total_quota;
+        overall_status += " - Total completed: " + total_completed ;
+        overall_status +=  " (" + total_completed_percent +  "%)" + " | " + "Data updated at: " + download_time;;
+        //overall_status += " - Quota completed: " + total_quota_completed;
+        document.getElementById("overall_status").innerHTML =overall_status;
+
+        //overall_status
+        var overall_status_asq =  "ASQ: " + "Total quota: " + total_quota_asq;
+        overall_status_asq += " - Total completed: " + total_completed_asq ;
+        overall_status_asq +=  " (" + total_completed_percent_asq +  "%)" + " | " + "Data updated at: " + download_time_asq;;
+        //overall_status += " - Quota completed: " + total_quota_completed;
+        document.getElementById("overall_status_asq").innerHTML =overall_status_asq;
+      }
+    
+      function start_new_interview() {
+        console.log("start_new_interview");
+        
+        let url = "https://survey.alchemer.eu/s3/90261702/AB?";
+        
+        if (flightForInterview && flightForInterview.Flight) url = url + "flight=" + flightForInterview.Flight;
+        if (flightForInterview && flightForInterview.AirlineCode) url = url + "&airlinecode=" + flightForInterview.AirlineCode;
+        if (flightForInterview && flightForInterview.Airline) url = url + "&airlinename=" + flightForInterview.Airline;
+        if (flightForInterview && flightForInterview.Dest) url = url + "&dest=" + flightForInterview.Dest;
+        if (flightForInterview && flightForInterview.DestName) url = url + "&destname=" + flightForInterview.DestName;
+
+        document.getElementById('inputFlightCodeID').value = "";
+        window.location.href = url;
+    }
+
+    function contains(str1, str2) {
+      return new RegExp(str2, "i").test(str1);
+    }
+
+    window.addEventListener('load', function () {
+      load_flight_list();
+      document.getElementById('inputFlightCodeID').value = "";
+      var data = $.map(flightList, function (obj) {
+        obj.id = obj.id || flightList.indexOf(obj); // replace pk with your identifier
+        obj.text = obj.Show;
+        return obj;
+      });
+      $('#inputFlightCodeID').select2({
+        allowClear: true,
+        placeholder: "Please key in flight number to find a flight for PEI AB:",
+        data: data,
+        dropdownParent: $('.wrapper-flight-select'),
+        query: function(q) {
+          var pageSize = 50,
+              results = this.data.filter(function(e) {
+                return contains(e.text, q.term);
+              });
+              
+          // Get a page sized slice of data from the results of filtering the data set.
+          
+          var paged = results.slice((q.page - 1) * pageSize, q.page * pageSize);
+          
+          q.callback({
+            results: paged,
+            more: results.length >= q.page * pageSize
+          });
+        }
+      });
+      $('#inputFlightCodeID').on('select2:select', function (e) {
+        var result_search = e.params.data;
+        select_flight_v2(result_search);
+      });
+      $("#inputFlightCodeID").on("select2:unselecting", function(e) {
+        flightForInterview = undefined;
+      });
+
+    });
+    $( document ).ready(function() {
+      var data = $.map(flightList, function (obj) {
+        obj.id = obj.id || flightList.indexOf(obj); // replace pk with your identifier
+        obj.text = obj.Show;
+        return obj;
+      });
+      $('#inputFlightCodeID').select2({
+        allowClear: true,
+        placeholder: "Please key in flight number to find a flight for PEI AB:",
+        data: data,
+        dropdownParent: $('.wrapper-flight-select'),
+        query: function(q) {
+          var pageSize = 50,
+              results = this.data.filter(function(e) {
+                return contains(e.text, q.term);
+              });
+              
+          // Get a page sized slice of data from the results of filtering the data set.
+          
+          var paged = results.slice((q.page - 1) * pageSize, q.page * pageSize);
+          
+          q.callback({
+            results: paged,
+            more: results.length >= q.page * pageSize
+          });
+        }
+      });
+      $('#inputFlightCodeID').on('select2:select', function (e) {
+        var result_search = e.params.data;
+        select_flight_v2(result_search);
+      });
+      $("#inputFlightCodeID").on("select2:unselecting", function(e) {
+        flightForInterview = undefined;
+      });
+    });
+    </script>
+  </head>
+  <body>
+    </br></br></br>
+    <div class='wrapper-flight-select'>
+      <select
+        placeholder="Please key in flight number to find a flight for PEI AB:"
+        name="inputFlightCodeID" id="inputFlightCodeID" >
+        <option></option>
+      </select>
+      <!-- <input list="flightDropBoxList" 
+        onchange="select_flight()"  
+        onkeyup="update_drop_box_list()" 
+        placeholder="Please key in flight number to find a flight for PEI AB:"
+        name="inputFlightCodeID" id="inputFlightCodeID" >
+      <datalist id="flightDropBoxList"> -->
+
+    </div>  
+  
+    <div>
+      </br></br></br> </br></br>
+      <button onclick="start_new_interview()" class="button blue">Start PEI AB Survey</button>
+      </br></br>
+    </div>
+
+    
+    <div style="background-color:#66CCFF;">
+      </br>
+    </div>
+
+    <!-- <h5 id="download_time"></h5> -->
+    <h4 id="overall_arrival_status"></h4>
+    <h4 id="overall_status"></h4>
+
+    <h4 id="overall_status_asq"></h4>
+
+    <div id="dashboard_div">
+      <!--Divs that will hold each control and chart-->
+      <div id="filter_survey"></div>
+      <div id="filter_terminal"></div>
+      <div id="filter_div" style="font-size: 15px"> </div>
+      </br>
+      <div id="table_div"></div>
+    </div>
+
+  </body>
+</html>
