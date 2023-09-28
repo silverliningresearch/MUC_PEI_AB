@@ -11,7 +11,9 @@
     <script src="scripts/CalculateDataArrival.js"></script>
     <script src="scripts/flight_search.js"></script>
 
-    <script src="data/Quota_Data_ASQ.js"></script>
+    <script src="data/ASQ_Quota_Airline_Dest.js"></script>
+    <script src="data/ASQ_Quota_Airlines.js"></script>
+    <script src="data/ASQ_Quota_Dest.js"></script>
     <script src="scripts/PrepareData_ASQ.js"></script>
     <script src="scripts/CalculateData_ASQ.js"></script>
     
@@ -21,7 +23,12 @@
     <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_alc/MUC_PEI_AB/data/interview_data_arr.js"></script>
     <script type="text/javascript" src="https://silverliningresearch.github.io/daily_plan_data_alc/MUC_PEI_AB/data/MUC_Gate_Info.js"></script>
 
-    <link href="css/styles.css" rel ="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <link href="css/styles_v2.css" rel ="stylesheet" type="text/css" />
     <style>
       .table-font {
         font-size: 16px;
@@ -79,13 +86,15 @@
       google.charts.setOnLoadCallback(drawTable);
 
       function drawTable() {
-        CalculateAirportAirLineReport();
-        CalculateArrival();
         //to merge ASQ
         CalculateAirportAirLineReport_asq();
 
+        CalculateAirportAirLineReport();
+        CalculateArrival();
+
         for (i = 0; i < daily_plan_data.length; i++) {
           daily_plan_data[i].Survey = "PEI AB"; 
+          daily_plan_data[i].ASQ_remark = "";
         }
         for (i = 0; i < daily_plan_data_asq.length; i++) {
           daily_plan_data_asq[i].Survey = "ASQ"; 
@@ -130,19 +139,21 @@
             }
           }
 
-        //highlight priority one
-        var priority_col = data.getNumberOfColumns()-1; //last one
-        for (var i = 0; i < data.getNumberOfRows(); i++) {
-          for (j=0; j < data.getNumberOfColumns(); j++) {
-            if (data.getValue(i, priority_col) ==1) 
-            {
-              data.setProperty(i, j, 'style', 'background-color:#FFCCCB');
-            }
-            else {
-              //data.setProperty(i, j, 'style', 'background-color:white; font-size: 15px');
+          //highlight priority one
+          var priority_col = data.getNumberOfColumns()-1; //last one
+          var remaining_flights_col = data.getNumberOfColumns()-7; 
+          for (var i = 0; i < data.getNumberOfRows(); i++) {
+            for (j=0; j < data.getNumberOfColumns(); j++) {
+              if (data.getValue(i, priority_col) ==1) 
+              {
+                data.setProperty(i, j, 'style', 'background-color:#FFCCCB');
+              }
+              else if ( data.getValue(i, priority_col) ==2) 
+              {
+                data.setProperty(i, j, 'style', 'background-color:#F67052');
+              }
             }
           }
-        }
 
         //create a dashboard.
         var dashboard = new google.visualization.Dashboard(
@@ -242,37 +253,81 @@
       }
     
       function start_new_interview() {
-      console.log("start_new_interview");
-      
-      let url = "https://survey.alchemer.eu/s3/90261702/AB?";
-      
-      if (flightForInterview && flightForInterview.Flight) url = url + "flight=" + flightForInterview.Flight;
-      if (flightForInterview && flightForInterview.AirlineCode) url = url + "&airlinecode=" + flightForInterview.AirlineCode;
-      if (flightForInterview && flightForInterview.Airline) url = url + "&airlinename=" + flightForInterview.Airline;
-      if (flightForInterview && flightForInterview.Dest) url = url + "&dest=" + flightForInterview.Dest;
-      if (flightForInterview && flightForInterview.DestName) url = url + "&destname=" + flightForInterview.DestName;
+        console.log("start_new_interview");
+        
+        let url = "https://survey.alchemer.eu/s3/90261702/AB?";
+        
+        if (flightForInterview && flightForInterview.Flight) url = url + "flight=" + flightForInterview.Flight;
+        if (flightForInterview && flightForInterview.AirlineCode) url = url + "&airlinecode=" + flightForInterview.AirlineCode;
+        if (flightForInterview && flightForInterview.Airline) url = url + "&airlinename=" + flightForInterview.Airline;
+        if (flightForInterview && flightForInterview.Dest) url = url + "&dest=" + flightForInterview.Dest;
+        if (flightForInterview && flightForInterview.DestName) url = url + "&destname=" + flightForInterview.DestName;
 
-      document.getElementById('inputFlightCodeID').value = "";
-      window.location.href = url;
+        document.getElementById('inputFlightCodeID').value = "";
+        window.location.href = url;
     }
 
-      window.addEventListener('load', function () {
+    function contains(str1, str2) {
+      return new RegExp(str2, "i").test(str1);
+    }
+    window.addEventListener('load', function () {
+      $('.wrapper-flight-select').removeClass('not-show');
+    });
+    $( document ).ready(function() {
       load_flight_list();
       document.getElementById('inputFlightCodeID').value = "";
+      var dataSelect = $.map(flightList, function (obj) {
+        obj.id = obj.id || flightList.indexOf(obj); // replace pk with your identifier
+        obj.text = obj.Show;
+        return obj;
+      });
+      $('#inputFlightCodeID').select2({
+        allowClear: true,
+        placeholder: "Please key in flight number to find a flight for PEI AB:",
+        data: dataSelect,
+        dropdownParent: $('.wrapper-flight-select'),
+        query: function(q) {
+          var pageSize = 50,
+              results = this.data.filter(function(e) {
+                return contains(e.text, q.term);
+              });
+              
+          // Get a page sized slice of data from the results of filtering the data set.
+          
+          var paged = results.slice((q.page - 1) * pageSize, q.page * pageSize);
+          
+          q.callback({
+            results: paged,
+            more: results.length >= q.page * pageSize
+          });
+        }
+      });
+      $('#inputFlightCodeID').on('select2:select', function (e) {
+        var result_search = e.params.data;
+        select_flight_v2(result_search);
+      });
+      $("#inputFlightCodeID").on("select2:unselecting", function(e) {
+        flightForInterview = undefined;
+      });
     });
-
-
     </script>
   </head>
   <body>
     </br></br></br>
-    <div>
-      <input list="flightDropBoxList" 
-        onchange="select_flight()"  
+    <div class='wrapper-flight-select not-show'>
+      <select
+        placeholder="Please key in flight number to find a flight for PEI AB:"
+        name="inputFlightCodeID" id="inputFlightCodeID" >
+        <option></option>
+      </select>
+      <!-- <datalist id="flightDropBoxList"> -->
+      <!-- <input list="flightDropBoxList" 
+        onchange="select_flight_v2()"  
         onkeyup="update_drop_box_list()" 
         placeholder="Please key in flight number to find a flight for PEI AB:"
         name="inputFlightCodeID" id="inputFlightCodeID" >
-      <datalist id="flightDropBoxList">
+      <datalist id="flightDropBoxList"> -->
+
     </div>  
   
     <div>

@@ -1,4 +1,7 @@
-var quota_data_asq;
+var dest_airline_quota_asq;
+var airline_quota_asq;
+var dest_quota_asq;
+
 var interview_data_asq;
 var today_flight_list_asq;
 var this_month_flight_list_asq;
@@ -119,7 +122,9 @@ function notDeparted_asq(flight_time) {
 }
 
 function prepareInterviewData_asq() {
-  var quota_data_asq_temp = JSON.parse(AirlineDest_quota_ASQ);
+  var dest_airline_quota_asq_temp = JSON.parse(AirlineDest_quota_ASQ);
+  var airline_quota_asq_temp = JSON.parse(Airline_quota_ASQ);
+  var dest_quota_asq_temp = JSON.parse(Dest_quota_ASQ);
   
   var interview_data_asq_temp  = JSON.parse(interview_statistics_asq);
   var flight_list_temp  = JSON.parse(MUC_Departures_Flight_List_Raw);
@@ -128,15 +133,33 @@ function prepareInterviewData_asq() {
   initCurrentTimeVars_asq();	
   
   //get quota data
-  quota_data_asq = [];
-  quota_data_asq.length = 0;
-  for (i = 0; i < quota_data_asq_temp.length; i++) {
-    if (quota_data_asq_temp[i].Quarter == currentQuarter)
+  dest_airline_quota_asq = [];
+  dest_airline_quota_asq.length = 0;
+  for (i = 0; i < dest_airline_quota_asq_temp.length; i++) {
+    if (dest_airline_quota_asq_temp[i].Quarter == currentQuarter)
     {
-      quota_data_asq.push(quota_data_asq_temp[i]);
+      dest_airline_quota_asq.push(dest_airline_quota_asq_temp[i]);
     }
   }
   
+  airline_quota_asq = [];
+  airline_quota_asq.length = 0;
+  for (i = 0; i < airline_quota_asq_temp.length; i++) {
+    if (airline_quota_asq_temp[i].Quarter == currentQuarter)
+    {
+      airline_quota_asq.push(airline_quota_asq_temp[i]);
+    }
+  }
+
+  dest_quota_asq = [];
+  dest_quota_asq.length = 0;
+  for (i = 0; i < dest_quota_asq_temp.length; i++) {
+    if (dest_quota_asq_temp[i].Quarter == currentQuarter)
+    {
+      dest_quota_asq.push(dest_quota_asq_temp[i]);
+    }
+  }
+
   //get relevant interview data
   //empty the list
   interview_data_asq = [];
@@ -152,10 +175,12 @@ function prepareInterviewData_asq() {
 
     if ((currentQuarter == interview_quarter))
     {
-      var quota_id = '"quota_id"' + ":" + '"' +  interview["quota_id"] + '", ';
+      var Airline_Dest = '"Airline_Dest"' + ":" + '"' +  interview["quota_id"] + '", ';
+      var Airline = '"Airline"' + ":" + '"' +  interview["quota_id"].substring(0, 2) + '", ';
+      var Dest = '"Dest"' + ":" + '"' +  interview["quota_id"].substring(3, 6) + '", ';
       var InterviewEndDate = '"InterviewEndDate"' + ":" + '"' +  interview["InterviewDate"]+ '", ' ;
       var Completed_of_interviews = '"Completed_of_interviews"' + ":" + '"' +  interview["Number of interviews"] ;
-      var str = '{' + quota_id + InterviewEndDate + Completed_of_interviews + '"}';
+      var str = '{' + Airline_Dest + Airline + Dest + InterviewEndDate + Completed_of_interviews + '"}';
       interview_data_asq.push(JSON.parse(str));
     }
   }
@@ -171,7 +196,7 @@ function prepareInterviewData_asq() {
   for (i = 0; i < flight_list_temp.length; i++) {
     let flight = flight_list_temp[i];
 
-    flight.quota_id = flight.AirlineCode + "-" + flight.Dest;//code for compare
+    flight.Airline_Dest = flight.AirlineCode + "-" + flight.Dest;//code for compare
 
     //for sorting: YYYY-MM-DD
     flight.DateTimeID = flight.Date.substring(6,10) +  flight.Date.substring(3,5) +  flight.Date.substring(0,2) + flight.Time;
@@ -216,15 +241,31 @@ function prepareInterviewData_asq() {
       }
     }
 
-    for (j = 0; j < quota_data_asq.length; j++) {
-      let quota = quota_data_asq[j];
-      if ((quota.quota_id == flight.quota_id) && (quota.Quota>0))
+    for (j = 0; j < dest_airline_quota_asq.length; j++) {
+      let quota = dest_airline_quota_asq[j];
+      if ((quota.Airline_Dest == flight.Airline_Dest) )
       {
         flight.Quota = quota.Quota;
-        daily_plan_data_asq.push(flight);
        }
     }
+    
+    for (j = 0; j < airline_quota_asq.length; j++) {
+      let quota = airline_quota_asq[j];
+      if ((quota.Airline == flight.AirlineCode))
+      {
+        flight.Airline_Quota = quota.Quota;
+       }
+    }
+
+    for (j = 0; j < dest_quota_asq.length; j++) {
+      let quota = dest_quota_asq[j];
+      if ((quota.Dest == flight.Dest))
+      {
+        flight.Dest_Quota = quota.Quota;
+       }
+    }
+    if (flight.Quota>0) daily_plan_data_asq.push(flight);
   }
-  
-//  console.log("today_flight_list_asq: ", today_flight_list_asq);
+ 
+  //console.log("daily_plan_data_asq: ", daily_plan_data_asq);
 }

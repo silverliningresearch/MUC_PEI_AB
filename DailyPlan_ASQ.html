@@ -3,7 +3,9 @@
 		<title>Daily plan - MUC ASQ Survey</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     
-		<script src="data/Quota_Data_ASQ.js"></script>
+    <script src="data/ASQ_Quota_Airline_Dest.js"></script>
+    <script src="data/ASQ_Quota_Airlines.js"></script>
+    <script src="data/ASQ_Quota_Dest.js"></script>
     <script src="scripts/PrepareData_ASQ.js"></script>
     <script src="scripts/CalculateData_ASQ.js"></script>
     
@@ -54,6 +56,7 @@
         data.addColumn('number', 'Completed');
 				data.addColumn('number', 'Missing');
         data.addColumn('number', 'Completed %');
+        data.addColumn('string', 'ASQ missing');
         data.addColumn('number', 'Priority Score');
         data.addColumn('number', 'Priority');
         
@@ -66,6 +69,7 @@
               row.Flight, row.DestName, 
               Number(row.remaining_flights), Number(row.Quota), Number(row.Completed), Number(row.Difference), 
               Number(row.Completed_percent), 
+              row.ASQ_missing,
               Number(row.Prioritisation_score), 
               Number(row.Priority)]]);
 			  }	
@@ -78,8 +82,9 @@
             {
               data.setProperty(i, j, 'style', 'background-color:#FFCCCB');
             }
-            else {
-              //data.setProperty(i, j, 'style', 'background-color:white; font-size: 15px');
+            if (data.getValue(i, priority_col) ==2) 
+            {
+              data.setProperty(i, j, 'style', 'background-color:#F67052');
             }
           }
         }

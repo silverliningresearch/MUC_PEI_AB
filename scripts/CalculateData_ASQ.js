@@ -4,6 +4,7 @@ function CalculateAirportAirLineReport_asq() {
   CalculateDOOP_asq(); //add DOOP to quota list
 
   var daily_plan_data_temp;
+  var row;
   daily_plan_data_temp = [];
   daily_plan_data_temp.length = 0;
   
@@ -17,9 +18,9 @@ function CalculateAirportAirLineReport_asq() {
   {
     total_completed_asq = total_completed_asq +   parseInt(interview_data_asq[i].Completed_of_interviews);
     found_temp = 0;
-    for (j = 0; j < quota_data_asq.length; j++) 
+    for (j = 0; j < dest_airline_quota_asq.length; j++) 
     {
-      if (quota_data_asq[j].quota_id.toUpperCase() == interview_data_asq[i].quota_id.toUpperCase()) 
+      if (dest_airline_quota_asq[j].Airline_Dest.toUpperCase() == interview_data_asq[i].Airline_Dest.toUpperCase()) 
       { 
         found_temp = 1;
       }
@@ -28,11 +29,12 @@ function CalculateAirportAirLineReport_asq() {
   }
   console.log("not_in_quota_list: ", not_in_quota_list);
 
-  for (i = 0; i < quota_data_asq.length; i++) {
-    row = quota_data_asq[i];
+  //Dest_Airline related
+  for (i = 0; i < dest_airline_quota_asq.length; i++) {
+    row = dest_airline_quota_asq[i];
     row.Completed = 0;
     for (j = 0; j < interview_data_asq.length; j++) {
-      if (row.quota_id.toUpperCase() == interview_data_asq[j].quota_id.toUpperCase()) 
+      if (row.Airline_Dest.toUpperCase() == interview_data_asq[j].Airline_Dest.toUpperCase()) 
       { 
         row.Completed = row.Completed  + parseInt(interview_data_asq[j].Completed_of_interviews);
       }
@@ -52,55 +54,144 @@ function CalculateAirportAirLineReport_asq() {
         total_quota_completed_asq = total_quota_completed_asq + row.Completed*1;
       }
     }
-    row.AirlineCode = row.quota_id.substring(0, 2);
-    row.Dest = row.quota_id.substring(3, 6);
-
   }
 
-  for (i = 0; i < daily_plan_data_asq.length; i++) {//Flight_To_report.length;
+  //Airline related
+  for (i = 0; i < airline_quota_asq.length; i++) {
+    row = airline_quota_asq[i];
+    row.Airline_Completed = 0;
+    for (j = 0; j < interview_data_asq.length; j++) {
+      if (row.Airline.toUpperCase() == interview_data_asq[j].Airline.toUpperCase()) 
+      { 
+        row.Airline_Completed = row.Airline_Completed  + parseInt(interview_data_asq[j].Completed_of_interviews);
+      }
+    }
+    row.Airline_Difference = row.Airline_Completed -  row.Quota;
+    row.Airline_Completed_percent =(100*(row.Airline_Completed/row.Quota)).toFixed(0);
+  }
+
+  //Dest related
+  for (i = 0; i < dest_quota_asq.length; i++) {
+    row = dest_quota_asq[i];
+    row.Dest_Completed = 0;
+    for (j = 0; j < interview_data_asq.length; j++) {
+      if (row.Dest.toUpperCase() == interview_data_asq[j].Dest.toUpperCase()) 
+      { 
+        row.Dest_Completed = row.Dest_Completed  + parseInt(interview_data_asq[j].Completed_of_interviews);
+      }
+    }
+    row.Dest_Difference = row.Dest_Completed -  row.Quota;
+    row.Dest_Completed_percent =(100*(row.Dest_Completed/row.Quota)).toFixed(0);
+  }
+
+  for (i = 0; i < daily_plan_data_asq.length; i++) {
     row = daily_plan_data_asq[i];
-    for (j = 0; j < quota_data_asq.length; j++) {
-      if (row.quota_id.toUpperCase() == quota_data_asq[j].quota_id.toUpperCase()) 
+    for (j = 0; j < dest_airline_quota_asq.length; j++) {
+      if (row.Airline_Dest.toUpperCase() == dest_airline_quota_asq[j].Airline_Dest.toUpperCase()) 
       {
-        if ( quota_data_asq[j].Difference < 0) {
-          row.doop = quota_data_asq[j].doop;
-          row.remaining_flights = quota_data_asq[j].remaining_flights;
-          row.Completed = quota_data_asq[j].Completed;
-          row.Difference = quota_data_asq[j].Difference;
-          row.Difference_percent = quota_data_asq[j].Difference_percent;
-          row.Completed_percent = quota_data_asq[j].Completed_percent;
-          row.Prioritisation_score = quota_data_asq[j].Prioritisation_score;
-          daily_plan_data_temp.push(row);
+        //if ( dest_airline_quota_asq[j].Difference < 0) 
+        {
+          row.doop = dest_airline_quota_asq[j].doop;
+          row.remaining_flights = dest_airline_quota_asq[j].remaining_flights;
+          row.Completed = dest_airline_quota_asq[j].Completed;
+          row.Difference = dest_airline_quota_asq[j].Difference;
+          row.Difference_percent = dest_airline_quota_asq[j].Difference_percent;
+          row.Completed_percent = dest_airline_quota_asq[j].Completed_percent;
+          row.Prioritisation_score = dest_airline_quota_asq[j].Prioritisation_score;
         }
       }
     }  
+
+    row.Airline_Difference = 0;
+    row.Airline_Completed_percent = 100;
+
+    for (j = 0; j < airline_quota_asq.length; j++) {
+      if (row.Airline.toUpperCase() == airline_quota_asq[j].Airline.toUpperCase()) 
+      {
+        //if ( airline_quota_asq[j].Difference < 0) 
+        {
+          row.Airline_Difference = airline_quota_asq[j].Airline_Difference;
+          row.Airline_Completed_percent = airline_quota_asq[j].Airline_Completed_percent;
+        }
+      }
+    }  
+
+    row.Dest_Difference = 0;
+    row.Dest_Completed_percent = 100;
+
+    for (j = 0; j < dest_quota_asq.length; j++) {
+      if (row.Dest.toUpperCase() == dest_quota_asq[j].Dest.toUpperCase()) 
+      {
+        //if ( airline_quota_asq[j].Difference < 0) 
+        {
+          row.Dest_Difference = dest_quota_asq[j].Dest_Difference;
+          row.Dest_Completed_percent = dest_quota_asq[j].Dest_Completed_percent;
+        }
+      }
+    } 
+    
+    daily_plan_data_temp.push(row);
   }
+    
+  //console.log("daily_plan_data_asq: ", daily_plan_data_asq);
+  //console.log("dest_airline_quota_asq: ", dest_airline_quota_asq);
 
   total_completed_percent_asq = (100*(total_completed_asq/total_quota_asq)).toFixed(0);   
   daily_plan_data_asq = [];
   daily_plan_data_asq.length = 0;
 
- //sort decending
+ //sort ascending
   daily_plan_data_temp.sort(function(a, b) {
-    return parseFloat(b.Prioritisation_score) - parseFloat(a.Prioritisation_score);
+    return parseFloat(a.remaining_flights) - parseFloat(b.remaining_flights);
   });
 
   var count  = 0;
   for (i = 0; i < daily_plan_data_temp.length; i++) {
-    row = daily_plan_data_temp[i];
-    row.Priority = 0;
-    daily_plan_data_asq.push(row);
-    if((count < daily_plan_data_temp.length*0.3 ) || (row.remaining_flights<4))
+    if ((daily_plan_data_temp[i].Difference < 0)  
+    || (daily_plan_data_temp[i].Difference < 0)
+    || (daily_plan_data_temp[i].Difference < 0) )
     {
-      //-	Flights with a quota target less than 4 should never be red
-      //-	Flights with a completion percentage of ≥85% should never be red
-      if ((row.Quota>=4) && (row.Completed_percent<=85))
+      row = daily_plan_data_temp[i];
+      row.Priority = 0;
+      daily_plan_data_asq.push(row);
+      if((count < daily_plan_data_temp.length*0.3 ))
       {
-        count++; //hightlight 25% of the total list
-        row.Priority = 1;
+        //-	Flights with a quota target less than 4 should never be red
+        //-	Flights with a completion percentage of ≥85% should never be red
+        if ((row.Quota>=4) && (row.Completed_percent<=85))
+        {
+          row.Priority = 1;
+          row.ASQ_missing = "Airline-Dest; "
+        }
+        else if ((row.Airline_Quota>=4) && (row.Airline_Completed_percent<=85))
+        {
+          row.Priority = 1;
+          row.ASQ_missing = "Airline; "
+          row.Difference = row.Airline_Difference;
+          console.log("row.Airline_Difference: ", row.Airline_Difference);          
+        } else if ((row.Dest_Quota>=4) && (row.Dest_Completed_percent<=85))
+        {
+          row.Priority = 1;
+          row.ASQ_missing = "Dest";
+          row.Difference = row.Dest_Difference;
+          console.log("row.Dest_Difference: ", row.Dest_Difference);          
+          console.log("row.Dest_Completed_percent: ", row.Dest_Completed_percent);  
+          // console.log("row.Dest: ", row.Dest);
+          // console.log("row.Dest_Quota: ", row.Dest_Quota);
+          // console.log("row.Dest_Completed_percent: ", row.Dest_Completed_percent);
+        }
+        if (row.Priority == 1) 
+        { 
+          count++; //hightlight 30% of the total list
+          if (row.remaining_flights <20) row.Priority = 2 ;
+          console.log("row.remaining_flights: ", row.remaining_flights);
+
+        }
+
       }
     }
   }
+
 }
 
 function getDOOP_asq(date) //"07-02-2023"
@@ -134,9 +225,9 @@ function isNotThePastDate_asq(date) //"07-02-2023"
 }
 
 function CalculateDOOP_asq() {
-  for (var i = 0; i < quota_data_asq.length; i++) {
-    quota_data_asq[i].doop = " ";
-    quota_data_asq[i].remaining_flights = 0;
+  for (var i = 0; i < dest_airline_quota_asq.length; i++) {
+    dest_airline_quota_asq[i].doop = " ";
+    dest_airline_quota_asq[i].remaining_flights = 0;
     var mon =0;
     var tue =0;
     var wed =0;
@@ -147,7 +238,7 @@ function CalculateDOOP_asq() {
 
     var remaining_flights = 0;
     for (var j = 0; j < this_month_flight_list_asq.length; j++) {
-      if (quota_data_asq[i].quota_id.toUpperCase() == this_month_flight_list_asq[j].quota_id.toUpperCase()) 
+      if (dest_airline_quota_asq[i].Airline_Dest.toUpperCase() == this_month_flight_list_asq[j].Airline_Dest.toUpperCase()) 
       {
         //get remaining_flights
         if (isNotThePastDate_asq(this_month_flight_list_asq[j].Date)) {
@@ -181,8 +272,8 @@ function CalculateDOOP_asq() {
         }
       }
     }
-    quota_data_asq[i].doop =[mon, tue, wed, thu, fri, sat, sun].join('');
-    quota_data_asq[i].remaining_flights = remaining_flights;
+    dest_airline_quota_asq[i].doop =[mon, tue, wed, thu, fri, sat, sun].join('');
+    dest_airline_quota_asq[i].remaining_flights = remaining_flights;
   }
 }
 
@@ -193,12 +284,12 @@ function CalculateLessFlights_asq() {
   less_than_6_flights_list = [];
   less_than_6_flights_list.length = 0;
  
-  for (var i = 0; i < quota_data_asq.length; i++) {
-    var quota = quota_data_asq[i];
+  for (var i = 0; i < dest_airline_quota_asq.length; i++) {
+    var quota = dest_airline_quota_asq[i];
     if (quota.remaining_flights<6) {
 
       for (var j = 0; j < this_month_flight_list_asq.length; j++) {
-        if (quota.quota_id.toUpperCase() == this_month_flight_list_asq[j].quota_id.toUpperCase()) 
+        if (quota.Airline_Dest.toUpperCase() == this_month_flight_list_asq[j].Airline_Dest.toUpperCase()) 
         {
           if (quota.Difference < 0) {
             row = this_month_flight_list_asq[j];
