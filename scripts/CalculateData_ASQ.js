@@ -167,13 +167,13 @@ function CalculateAirportAirLineReport_asq() {
         {
           row.Priority = 1;
           row.ASQ_missing = "Airline (" + row.Airline_Quota + ")";
-          row.Difference = row.Airline_Difference;
+          //row.Difference = row.Airline_Difference;
           console.log("row.Airline_Difference: ", row.Airline_Difference);          
         } else if ((row.Dest_Quota>=4) && (row.Dest_Completed_percent<=85))
         {
           row.Priority = 1;
           row.ASQ_missing = "Dest (" + row.Dest_Quota + ")";
-          row.Difference = row.Dest_Difference;
+          //row.Difference = row.Dest_Difference;
           console.log("row.Dest_Difference: ", row.Dest_Difference);          
           console.log("row.Dest_Completed_percent: ", row.Dest_Completed_percent);  
           // console.log("row.Dest: ", row.Dest);

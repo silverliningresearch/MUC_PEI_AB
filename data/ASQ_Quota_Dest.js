@@ -803,13 +803,18 @@
          
 
          {
+          "Dest": "ACE",
+          "Quota": 1,
+          "Quarter": "2023-Q4"
+         },
+         {
           "Dest": "ADB",
-          "Quota": 6,
+          "Quota": 3,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "AGP",
-          "Quota": 3,
+          "Quota": 2,
           "Quarter": "2023-Q4"
          },
          {
@@ -819,7 +824,7 @@
          },
          {
           "Dest": "AMS",
-          "Quota": 14,
+          "Quota": 15,
           "Quarter": "2023-Q4"
          },
          {
@@ -834,7 +839,7 @@
          },
          {
           "Dest": "ATH",
-          "Quota": 13,
+          "Quota": 12,
           "Quarter": "2023-Q4"
          },
          {
@@ -844,17 +849,17 @@
          },
          {
           "Dest": "AUH",
-          "Quota": 3,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "AYT",
-          "Quota": 12,
+          "Quota": 7,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "BCN",
-          "Quota": 14,
+          "Quota": 13,
           "Quarter": "2023-Q4"
          },
          {
@@ -864,7 +869,7 @@
          },
          {
           "Dest": "BER",
-          "Quota": 17,
+          "Quota": 19,
           "Quarter": "2023-Q4"
          },
          {
@@ -873,37 +878,27 @@
           "Quarter": "2023-Q4"
          },
          {
-          "Dest": "BIA",
-          "Quota": 1,
-          "Quarter": "2023-Q4"
-         },
-         {
           "Dest": "BIO",
           "Quota": 5,
           "Quarter": "2023-Q4"
          },
          {
-          "Dest": "BJV",
-          "Quota": 1,
-          "Quarter": "2023-Q4"
-         },
-         {
           "Dest": "BKK",
-          "Quota": 6,
+          "Quota": 8,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "BLL",
-          "Quota": 1,
+          "Quota": 2,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "BLQ",
-          "Quota": 3,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
-          "Dest": "BOD",
+          "Dest": "BLR",
           "Quota": 1,
           "Quarter": "2023-Q4"
          },
@@ -914,12 +909,12 @@
          },
          {
           "Dest": "BOS",
-          "Quota": 5,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "BRE",
-          "Quota": 6,
+          "Quota": 7,
           "Quarter": "2023-Q4"
          },
          {
@@ -929,42 +924,32 @@
          },
          {
           "Dest": "BRU",
-          "Quota": 9,
+          "Quota": 10,
+          "Quarter": "2023-Q4"
+         },
+         {
+          "Dest": "BSL",
+          "Quota": 2,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "BUD",
-          "Quota": 5,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "CAG",
-          "Quota": 1,
+          "Quota": 6,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "CAI",
-          "Quota": 3,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "CDG",
-          "Quota": 14,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "CFU",
-          "Quota": 3,
+          "Quota": 16,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "CGN",
-          "Quota": 9,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "CHQ",
-          "Quota": 1,
+          "Quota": 12,
           "Quarter": "2023-Q4"
          },
          {
@@ -983,13 +968,18 @@
           "Quarter": "2023-Q4"
          },
          {
+          "Dest": "CPT",
+          "Quota": 2,
+          "Quarter": "2023-Q4"
+         },
+         {
           "Dest": "CTA",
-          "Quota": 3,
+          "Quota": 2,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "DBV",
-          "Quota": 3,
+          "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
@@ -1000,16 +990,6 @@
          {
           "Dest": "DEN",
           "Quota": 6,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "DJE",
-          "Quota": 1,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "DLM",
-          "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
@@ -1029,7 +1009,7 @@
          },
          {
           "Dest": "DTW",
-          "Quota": 2,
+          "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
@@ -1039,12 +1019,12 @@
          },
          {
           "Dest": "DUS",
-          "Quota": 19,
+          "Quota": 21,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "DXB",
-          "Quota": 10,
+          "Quota": 13,
           "Quarter": "2023-Q4"
          },
          {
@@ -1064,32 +1044,27 @@
          },
          {
           "Dest": "FAO",
-          "Quota": 3,
+          "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "FCO",
-          "Quota": 9,
+          "Quota": 11,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "FLR",
-          "Quota": 3,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "FMO",
-          "Quota": 3,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "FNC",
-          "Quota": 2,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "FRA",
-          "Quota": 21,
+          "Quota": 23,
           "Quarter": "2023-Q4"
          },
          {
@@ -1114,12 +1089,12 @@
          },
          {
           "Dest": "GOT",
-          "Quota": 4,
+          "Quota": 5,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "GRZ",
-          "Quota": 1,
+          "Quota": 3,
           "Quarter": "2023-Q4"
          },
          {
@@ -1128,18 +1103,13 @@
           "Quarter": "2023-Q4"
          },
          {
-          "Dest": "GWT",
-          "Quota": 1,
-          "Quarter": "2023-Q4"
-         },
-         {
           "Dest": "HAJ",
-          "Quota": 6,
+          "Quota": 8,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "HAM",
-          "Quota": 22,
+          "Quota": 23,
           "Quarter": "2023-Q4"
          },
          {
@@ -1149,17 +1119,17 @@
          },
          {
           "Dest": "HER",
-          "Quota": 9,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "HND",
-          "Quota": 4,
+          "Quota": 5,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "HRG",
-          "Quota": 4,
+          "Quota": 5,
           "Quarter": "2023-Q4"
          },
          {
@@ -1174,7 +1144,7 @@
          },
          {
           "Dest": "IBZ",
-          "Quota": 4,
+          "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
@@ -1188,33 +1158,28 @@
           "Quarter": "2023-Q4"
          },
          {
+          "Dest": "JED",
+          "Quota": 1,
+          "Quarter": "2023-Q4"
+         },
+         {
           "Dest": "JFK",
-          "Quota": 5,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "JMK",
-          "Quota": 1,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "JTR",
-          "Quota": 1,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "KEF",
-          "Quota": 3,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "KGS",
           "Quota": 2,
           "Quarter": "2023-Q4"
          },
          {
-          "Dest": "KIX",
+          "Dest": "KIV",
           "Quota": 1,
+          "Quarter": "2023-Q4"
+         },
+         {
+          "Dest": "KIX",
+          "Quota": 3,
           "Quarter": "2023-Q4"
          },
          {
@@ -1223,18 +1188,13 @@
           "Quarter": "2023-Q4"
          },
          {
-          "Dest": "KVA",
+          "Dest": "KWI",
           "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
-          "Dest": "KWI",
-          "Quota": 2,
-          "Quarter": "2023-Q4"
-         },
-         {
           "Dest": "LAX",
-          "Quota": 3,
+          "Quota": 5,
           "Quarter": "2023-Q4"
          },
          {
@@ -1249,12 +1209,12 @@
          },
          {
           "Dest": "LGW",
-          "Quota": 2,
+          "Quota": 3,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "LHR",
-          "Quota": 22,
+          "Quota": 24,
           "Quarter": "2023-Q4"
          },
          {
@@ -1274,7 +1234,7 @@
          },
          {
           "Dest": "LPA",
-          "Quota": 1,
+          "Quota": 3,
           "Quarter": "2023-Q4"
          },
          {
@@ -1289,17 +1249,12 @@
          },
          {
           "Dest": "MAD",
-          "Quota": 13,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "MAH",
-          "Quota": 1,
+          "Quota": 14,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "MAN",
-          "Quota": 5,
+          "Quota": 6,
           "Quarter": "2023-Q4"
          },
          {
@@ -1313,8 +1268,13 @@
           "Quarter": "2023-Q4"
          },
          {
+          "Dest": "MIA",
+          "Quota": 2,
+          "Quarter": "2023-Q4"
+         },
+         {
           "Dest": "MLA",
-          "Quota": 4,
+          "Quota": 5,
           "Quarter": "2023-Q4"
          },
          {
@@ -1324,22 +1284,22 @@
          },
          {
           "Dest": "MXP",
-          "Quota": 4,
+          "Quota": 6,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "NAP",
-          "Quota": 6,
+          "Quota": 5,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "NCE",
-          "Quota": 6,
+          "Quota": 5,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "OLB",
-          "Quota": 2,
+          "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
@@ -1349,7 +1309,7 @@
          },
          {
           "Dest": "ORD",
-          "Quota": 8,
+          "Quota": 7,
           "Quarter": "2023-Q4"
          },
          {
@@ -1364,27 +1324,27 @@
          },
          {
           "Dest": "OTP",
-          "Quota": 4,
+          "Quota": 5,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "PAD",
-          "Quota": 1,
+          "Quota": 2,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "PEK",
-          "Quota": 3,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "PMI",
-          "Quota": 19,
+          "Quota": 11,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "PMO",
-          "Quota": 2,
+          "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
@@ -1399,32 +1359,22 @@
          },
          {
           "Dest": "PRN",
-          "Quota": 1,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "PUY",
-          "Quota": 1,
+          "Quota": 2,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "PVG",
-          "Quota": 2,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "PVK",
-          "Quota": 1,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "RHO",
           "Quota": 3,
           "Quarter": "2023-Q4"
          },
          {
+          "Dest": "RHO",
+          "Quota": 1,
+          "Quarter": "2023-Q4"
+         },
+         {
           "Dest": "RIX",
-          "Quota": 2,
+          "Quota": 3,
           "Quarter": "2023-Q4"
          },
          {
@@ -1439,12 +1389,12 @@
          },
          {
           "Dest": "SAN",
-          "Quota": 2,
+          "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "SAW",
-          "Quota": 5,
+          "Quota": 6,
           "Quarter": "2023-Q4"
          },
          {
@@ -1459,22 +1409,22 @@
          },
          {
           "Dest": "SIN",
-          "Quota": 4,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "SKG",
           "Quota": 6,
           "Quarter": "2023-Q4"
          },
          {
+          "Dest": "SKG",
+          "Quota": 5,
+          "Quarter": "2023-Q4"
+         },
+         {
           "Dest": "SOF",
-          "Quota": 4,
+          "Quota": 5,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "SPU",
-          "Quota": 3,
+          "Quota": 2,
           "Quarter": "2023-Q4"
          },
          {
@@ -1483,13 +1433,8 @@
           "Quarter": "2023-Q4"
          },
          {
-          "Dest": "SUF",
-          "Quota": 1,
-          "Quarter": "2023-Q4"
-         },
-         {
           "Dest": "SVQ",
-          "Quota": 2,
+          "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
@@ -1499,17 +1444,17 @@
          },
          {
           "Dest": "TFS",
-          "Quota": 2,
+          "Quota": 3,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "TIA",
-          "Quota": 3,
+          "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "TLL",
-          "Quota": 3,
+          "Quota": 2,
           "Quarter": "2023-Q4"
          },
          {
@@ -1524,12 +1469,12 @@
          },
          {
           "Dest": "TRN",
-          "Quota": 3,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "TSR",
-          "Quota": 3,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
@@ -1544,7 +1489,7 @@
          },
          {
           "Dest": "VIE",
-          "Quota": 7,
+          "Quota": 9,
           "Quarter": "2023-Q4"
          },
          {
@@ -1564,7 +1509,7 @@
          },
          {
           "Dest": "WAW",
-          "Quota": 6,
+          "Quota": 7,
           "Quarter": "2023-Q4"
          },
          {
@@ -1579,30 +1524,25 @@
          },
          {
           "Dest": "YVR",
-          "Quota": 3,
+          "Quota": 1,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "YYZ",
-          "Quota": 6,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "ZAG",
-          "Quota": 3,
+          "Quota": 4,
           "Quarter": "2023-Q4"
          },
          {
           "Dest": "ZRH",
-          "Quota": 7,
-          "Quarter": "2023-Q4"
-         },
-         {
-          "Dest": "ZTH",
-          "Quota": 1,
+          "Quota": 8,
           "Quarter": "2023-Q4"
          }
-        
+
 ]    
 
  `;

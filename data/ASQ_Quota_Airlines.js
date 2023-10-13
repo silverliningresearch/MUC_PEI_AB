@@ -282,8 +282,6 @@
          },
 
 
-
-
          {
           "Airline": "5F",
           "Quota": 1,
@@ -613,13 +611,8 @@
           "Quota": 9,
           "Quarter": "2023-Q4",
           "Notes": ""
-         },
-         {
-          "Airline": "XQ",
-          "Quota": 15,
-          "Quarter": "2023-Q4",
-          "Notes": ""
          }
+        
 ]    
 
  `;
