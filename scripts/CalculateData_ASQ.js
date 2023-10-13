@@ -151,6 +151,7 @@ function CalculateAirportAirLineReport_asq() {
     || (daily_plan_data_temp[i].Difference < 0)
     || (daily_plan_data_temp[i].Difference < 0) )
     {
+      console.log("daily_plan_data_temp[i]: ", daily_plan_data_temp[i]);          
       row = daily_plan_data_temp[i];
       row.Priority = 0;
       daily_plan_data_asq.push(row);
@@ -166,16 +167,13 @@ function CalculateAirportAirLineReport_asq() {
         else if ((row.Airline_Quota>=4) && (row.Airline_Completed_percent<=85))
         {
           row.Priority = 1;
-          row.ASQ_missing = "Airline (" + row.Airline_Quota + ")";
+          row.ASQ_missing = row.Dest + " (missing " +  row.Airline_Difference + ")";
           //row.Difference = row.Airline_Difference;
-          console.log("row.Airline_Difference: ", row.Airline_Difference);          
         } else if ((row.Dest_Quota>=4) && (row.Dest_Completed_percent<=85))
         {
           row.Priority = 1;
-          row.ASQ_missing = "Dest (" + row.Dest_Quota + ")";
+          row.ASQ_missing = row.Airline + " (missing " +  row.Dest_Difference + ")";
           //row.Difference = row.Dest_Difference;
-          console.log("row.Dest_Difference: ", row.Dest_Difference);          
-          console.log("row.Dest_Completed_percent: ", row.Dest_Completed_percent);  
           // console.log("row.Dest: ", row.Dest);
           // console.log("row.Dest_Quota: ", row.Dest_Quota);
           // console.log("row.Dest_Completed_percent: ", row.Dest_Completed_percent);
