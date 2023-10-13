@@ -172,7 +172,7 @@ function CalculateAirportAirLineReport_asq() {
         } else if ((row.Dest_Quota>=4) && (row.Dest_Completed_percent<=85))
         {
           row.Priority = 1;
-          row.ASQ_missing = row.Airline + " (missing " +  row.Dest_Difference + ")";
+          row.ASQ_missing = row.AirlineCode + " (missing " +  row.Dest_Difference + ")";
           //row.Difference = row.Dest_Difference;
           // console.log("row.Dest: ", row.Dest);
           // console.log("row.Dest_Quota: ", row.Dest_Quota);
