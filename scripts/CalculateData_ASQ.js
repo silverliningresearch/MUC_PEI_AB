@@ -166,12 +166,12 @@ function CalculateAirportAirLineReport_asq() {
         }
         else if ((row.Airline_Quota>=4) && (row.Airline_Completed_percent<=85))
         {
-          row.Priority = 1;
+          //row.Priority = 1;
           row.ASQ_missing = row.Dest + " (missing " +  row.Airline_Difference + ")";
           //row.Difference = row.Airline_Difference;
         } else if ((row.Dest_Quota>=4) && (row.Dest_Completed_percent<=85))
         {
-          row.Priority = 1;
+          //row.Priority = 1;
           row.ASQ_missing = row.AirlineCode + " (missing " +  row.Dest_Difference + ")";
           //row.Difference = row.Dest_Difference;
           // console.log("row.Dest: ", row.Dest);
