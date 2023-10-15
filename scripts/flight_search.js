@@ -56,8 +56,8 @@ function notDeparted_flight_search(flight_time) {
   //Time: 0805    
   var flight_time_value = flight_time.substring(0,2) * 60 + flight_time.substring(2,4)*1;
   
-  //plus  2 hour
-  flight_time_value = flight_time_value + 120;
+  //plus  4 hour
+  flight_time_value = flight_time_value + 240;
 
   var result = (flight_time_value > current_time_value);
   return (result);

@@ -210,13 +210,11 @@ function prepareInterviewData_asq() {
     
     //only get today & not departed flight
     if (((currentDate == flight.Date) && notDeparted_asq(flight.Time))
-        //|| (flight.Date == nextDate)
+        || (flight.Date == nextDate)
       )
     { 
-      // flight.nextDay = 0; //display two date infor as requested by Didi
-      // if (nextDate == flight.Date) {
-      //   flight.nextDay = 1;
-      // }
+      flight.Date_Time = flight.Date.substring(6,10) + "-" +  flight.Date.substring(3,5) + "-" + flight.Date.substring(0,2) + " " + flight.Time;
+      //flight.Date_Time = flight.Time;
       today_flight_list_asq.push(flight);
     }
 			   
