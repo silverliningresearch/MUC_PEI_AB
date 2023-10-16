@@ -142,14 +142,26 @@ function CalculateAirportAirLineReport_asq() {
 
  //sort ascending
   daily_plan_data_temp.sort(function(a, b) {
-    return parseFloat(a.remaining_flights) - parseFloat(b.remaining_flights);
+    return parseFloat(b.Prioritisation_score) - parseFloat(a.Prioritisation_score);
   });
 
-  var count  = 0;
   for (i = 0; i < daily_plan_data_temp.length; i++) {
-    if ((daily_plan_data_temp[i].Difference < 0)  
-    || (daily_plan_data_temp[i].Difference < 0)
-    || (daily_plan_data_temp[i].Difference < 0) )
+    //-	Flights with a quota target less than 4 should never be red
+    //-	Flights with a completion percentage of ≥85% should never be red
+    row = daily_plan_data_temp[i];
+    row.dest_airline_still_missing = 0;
+    if ((row.Quota>=4) && (row.Completed_percent<=85))
+    {
+      row.dest_airline_still_missing = 1;
+    }
+  }
+  var count  = 0;
+  //highlight dest_airlines
+  for (i = 0; i < daily_plan_data_temp.length; i++) {
+    if ((daily_plan_data_temp[i].Difference < 0)
+      ||(daily_plan_data_temp[i].Airline_Difference < 0)
+      ||(daily_plan_data_temp[i].Dest_Difference < 0)
+    )
     {
       row = daily_plan_data_temp[i];
       row.Priority = 0;
@@ -158,24 +170,43 @@ function CalculateAirportAirLineReport_asq() {
       {
         //-	Flights with a quota target less than 4 should never be red
         //-	Flights with a completion percentage of ≥85% should never be red
-        if ((row.Quota>=4) && (row.Completed_percent<=85))
+        if (row.dest_airline_still_missing==1)
         {
           row.Priority = 1;
           row.ASQ_missing = ""
         }
         else if ((row.Airline_Quota>=4) && (row.Airline_Completed_percent<=85))
         {
-          //row.Priority = 1;
-          row.ASQ_missing = row.Dest + " (missing " +  row.Airline_Difference + ")";
-          //row.Difference = row.Airline_Difference;
+          //only highlight if the dest_airlines this Airline belong to not hightlighted yet
+          var found = 0;
+          for (var k = 0; k < daily_plan_data_temp.length; k++) 
+          {
+            if (daily_plan_data_temp[k].AirlineCode == row.AirlineCode) 
+            {
+              found = 1;
+              break;
+            }
+          }
+          if ((found==0)) {
+            row.Priority = 1;
+            row.ASQ_missing = row.AirlineCode + " (missing " +  row.Airline_Difference + ")";            
+          }
         } else if ((row.Dest_Quota>=4) && (row.Dest_Completed_percent<=85))
         {
-          //row.Priority = 1;
-          row.ASQ_missing = row.AirlineCode + " (missing " +  row.Dest_Difference + ")";
-          //row.Difference = row.Dest_Difference;
-          // console.log("row.Dest: ", row.Dest);
-          // console.log("row.Dest_Quota: ", row.Dest_Quota);
-          // console.log("row.Dest_Completed_percent: ", row.Dest_Completed_percent);
+          //only highlight if the dest_airlines this Dest belong to not hightlighted yet
+          var found = 0;
+          for (var k = 0; k < daily_plan_data_temp.length; k++) 
+          {
+            if (daily_plan_data_temp[k].Dest == row.Dest) 
+            {
+              found = 1;
+              break;
+            }
+          }
+          if (found==0) {
+            row.Priority = 1;
+            row.ASQ_missing = row.Dest + " (missing " +  row.Dest + ")";            
+          }
         }
         if (row.Priority == 1) 
         { 
@@ -186,6 +217,7 @@ function CalculateAirportAirLineReport_asq() {
       }
     }
   }
+
 
 }
 
