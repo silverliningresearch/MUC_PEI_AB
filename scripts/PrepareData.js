@@ -220,7 +220,7 @@ function prepareInterviewData() {
         || (nextDate == flight.Date)
         )
     { 
-      flight.Date_Time = flight.Date.substring(6,10) + "-" +  flight.Date.substring(3,5) + "-" + flight.Date.substring(0,2) + " " + flight.Time;
+      flight.Date_Time = flight.Date.substring(6,10) + flight.Date.substring(3,5) + flight.Date.substring(0,2) + flight.Time;
       //flight.Date_Time = flight.Time;
       today_flight_list.push(flight);
     }
@@ -231,7 +231,6 @@ function prepareInterviewData() {
   daily_plan_data = [];
   daily_plan_data.length = 0;
   
-
   for (i = 0; i < today_flight_list.length; i++) {
     let flight = today_flight_list[i];
 
@@ -255,6 +254,7 @@ function prepareInterviewData() {
         break;
        }
     }
+  
   }
-  //console.log("daily_plan_data:", daily_plan_data)
+    //console.log("daily_plan_data:", daily_plan_data)
 }

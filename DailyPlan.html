@@ -70,6 +70,7 @@
         CalculateArrival();
         var data = new google.visualization.DataTable();
 
+        data.addColumn('string', 'Date');
         data.addColumn('string', 'Time');
         data.addColumn('number', 'TER');
         data.addColumn('string', 'Gate Area');
@@ -85,12 +86,18 @@
         data.addColumn('number', 'Priority Score');
         data.addColumn('number', 'Priority');
         
+        //sort ascending
+        daily_plan_data.sort(function(a, b) {
+          return (parseFloat(a.Date_Time) - parseFloat(b.Date_Time));
+        });
+
         //add data
         for (i = 0; i < daily_plan_data.length; i++) {
           var row = daily_plan_data[i];
             { 
                 data.addRows([[
-                row.Date_Time, 
+                row.Date, 
+                row.Time, 
                 row.TER, row.GateArea, row.Gate,
                 row.Flight, row.DestName, 
                 //row.Next, 
@@ -157,7 +164,7 @@
           'options': {
             'allowHtml': true, 
             'cssClassNames': {tableCell: 'table-font', headerRow: 'table-font', headerCell: 'googleHeaderCell' },
-            'sortColumn': 0, //time
+            //'sortColumn': 0, //time
             'showRowNumber': false, 'width': '100%', 'height': '100%'
           }
         });
