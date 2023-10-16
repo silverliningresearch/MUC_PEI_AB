@@ -177,6 +177,8 @@ function CalculateAirportAirLineReport_asq() {
         }
         else if ((row.Airline_Quota>=4) && (row.Airline_Completed_percent<=85))
         {
+          //console.log("Airline_Quota: ", row.AirlineCode);
+          //console.log("Airline_Completed_percent: ", row.Airline_Completed_percent);
           //only highlight if the dest_airlines this Airline belong to not hightlighted yet
           var found = 0;
           for (var k = 0; k < daily_plan_data_temp.length; k++) 
@@ -189,6 +191,7 @@ function CalculateAirportAirLineReport_asq() {
           }
           if ((found==0)) {
             row.Priority = 1;
+            //row.Difference = row.Airline_Difference;
             row.ASQ_missing = row.AirlineCode + " (missing " +  row.Airline_Difference + ")";            
           }
         } else if ((row.Dest_Quota>=4) && (row.Dest_Completed_percent<=85))
@@ -205,6 +208,7 @@ function CalculateAirportAirLineReport_asq() {
           }
           if (found==0) {
             row.Priority = 1;
+            //row.Difference = row.Dest_Difference;
             row.ASQ_missing = row.Dest + " (missing " +  row.Dest + ")";            
           }
         }
