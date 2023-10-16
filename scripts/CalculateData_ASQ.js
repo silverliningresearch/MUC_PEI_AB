@@ -173,7 +173,7 @@ function CalculateAirportAirLineReport_asq() {
         if (row.dest_airline_still_missing==1)
         {
           row.Priority = 1;
-          row.ASQ_missing = ""
+          row.ASQ_missing = "";
         }
         else if ((row.Airline_Quota>=4) && (row.Airline_Completed_percent<=85))
         {
