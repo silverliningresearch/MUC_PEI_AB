@@ -151,7 +151,6 @@ function CalculateAirportAirLineReport_asq() {
     || (daily_plan_data_temp[i].Difference < 0)
     || (daily_plan_data_temp[i].Difference < 0) )
     {
-      console.log("daily_plan_data_temp[i]: ", daily_plan_data_temp[i]);          
       row = daily_plan_data_temp[i];
       row.Priority = 0;
       daily_plan_data_asq.push(row);
@@ -182,8 +181,6 @@ function CalculateAirportAirLineReport_asq() {
         { 
           count++; //hightlight 30% of the total list
           if (row.remaining_flights <20) row.Priority = 2 ;
-          console.log("row.remaining_flights: ", row.remaining_flights);
-
         }
 
       }
