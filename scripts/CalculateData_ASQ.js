@@ -212,7 +212,12 @@ function CalculateAirportAirLineReport_asq() {
             row.ASQ_missing = row.Dest + " (missing " +  row.Dest + ")";            
           }
         }
-        if (row.Priority == 1) 
+
+        //console.log("current_month.substring(0,2):", currentMonth.substring(0,2));
+        if ((row.Priority == 1) 
+            && ((currentMonth.substring(0,2) == "09") 
+                || (currentMonth.substring(0,2) == "12") 
+                || (currentMonth.substring(0,2) == "03") || (currentMonth.substring(0,2) == "06") )) 
         { 
           count++; //hightlight 30% of the total list
           if (row.remaining_flights <20) row.Priority = 2 ;
