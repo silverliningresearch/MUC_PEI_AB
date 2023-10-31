@@ -4568,6 +4568,7 @@
   "Month": "10"
  },
 
+
  {
   "quota_id": "ATH - A3",
   "Quota": 6,
@@ -4594,7 +4595,7 @@
  },
  {
   "quota_id": "CDG - AF",
-  "Quota": 12,
+  "Quota": 11,
   "Year": "2023",
   "Month": "11"
  },
@@ -4636,13 +4637,13 @@
  },
  {
   "quota_id": "FUE - DE",
-  "Quota": 3,
+  "Quota": 4,
   "Year": "2023",
   "Month": "11"
  },
  {
   "quota_id": "HRG - DE",
-  "Quota": 7,
+  "Quota": 10,
   "Year": "2023",
   "Month": "11"
  },
@@ -4660,7 +4661,7 @@
  },
  {
   "quota_id": "TFS - DE",
-  "Quota": 4,
+  "Quota": 5,
   "Year": "2023",
   "Month": "11"
  },
@@ -4816,7 +4817,7 @@
  },
  {
   "quota_id": "ARN - LH",
-  "Quota": 14,
+  "Quota": 13,
   "Year": "2023",
   "Month": "11"
  },
@@ -4840,7 +4841,7 @@
  },
  {
   "quota_id": "BER - LH",
-  "Quota": 36,
+  "Quota": 35,
   "Year": "2023",
   "Month": "11"
  },
@@ -4882,7 +4883,7 @@
  },
  {
   "quota_id": "BRE - LH",
-  "Quota": 14,
+  "Quota": 13,
   "Year": "2023",
   "Month": "11"
  },
@@ -4900,7 +4901,7 @@
  },
  {
   "quota_id": "BUD - LH",
-  "Quota": 12,
+  "Quota": 11,
   "Year": "2023",
   "Month": "11"
  },
@@ -4930,7 +4931,7 @@
  },
  {
   "quota_id": "CPH - LH",
-  "Quota": 13,
+  "Quota": 12,
   "Year": "2023",
   "Month": "11"
  },
@@ -5032,7 +5033,7 @@
  },
  {
   "quota_id": "HAM - LH",
-  "Quota": 36,
+  "Quota": 35,
   "Year": "2023",
   "Month": "11"
  },
@@ -5116,7 +5117,7 @@
  },
  {
   "quota_id": "MAD - LH",
-  "Quota": 12,
+  "Quota": 11,
   "Year": "2023",
   "Month": "11"
  },
@@ -5332,7 +5333,7 @@
  },
  {
   "quota_id": "VIE - OS",
-  "Quota": 12,
+  "Quota": 11,
   "Year": "2023",
   "Month": "11"
  },
@@ -5392,7 +5393,7 @@
  },
  {
   "quota_id": "LIS - TP",
-  "Quota": 13,
+  "Quota": 12,
   "Year": "2023",
   "Month": "11"
  },
@@ -5446,7 +5447,13 @@
  },
  {
   "quota_id": "FUE - X3",
-  "Quota": 5,
+  "Quota": 7,
+  "Year": "2023",
+  "Month": "11"
+ },
+ {
+  "quota_id": "HER - X3",
+  "Quota": 3,
   "Year": "2023",
   "Month": "11"
  },
@@ -5470,7 +5477,7 @@
  },
  {
   "quota_id": "TFS - X3",
-  "Quota": 6,
+  "Quota": 8,
   "Year": "2023",
   "Month": "11"
  },

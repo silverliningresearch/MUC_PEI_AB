@@ -115,12 +115,13 @@
         for (var i = 0; i < data.getNumberOfRows(); i++) {
           for (j=0; j < data.getNumberOfColumns(); j++) {
             if (data.getValue(i, priority_col) ==1) 
-            {
-              data.setProperty(i, j, 'style', 'background-color:#FFCCCB');
-            }
-            else {
-              //data.setProperty(i, j, 'style', 'background-color:white; font-size: 15px');
-            }
+              {
+                data.setProperty(i, j, 'style', 'background-color:#FFCCCB');
+              }
+              else if ( data.getValue(i, priority_col) ==2) 
+              {
+                data.setProperty(i, j, 'style', 'background-color:#F67052');
+              }
           }
         }
 

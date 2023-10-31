@@ -89,6 +89,8 @@ function CalculateAirportAirLineReport() {
     return parseFloat(b.Prioritisation_score) - parseFloat(a.Prioritisation_score);
   });
 
+  //special for MUC
+  var focus_airlines = ["DE", "EK", "EW", "XQ", "X3", "TK", "4Y"];
   for (i = 0; i < daily_plan_data_temp.length; i++) {
     row = daily_plan_data_temp[i];
     row.Priority = 0;
@@ -96,6 +98,15 @@ function CalculateAirportAirLineReport() {
     if((i< daily_plan_data_temp.length*0.25 ) || (row.remaining_flights<=5))
     {
       row.Priority = 1;
+    }
+    if (daily_plan_data_temp[i].AirlineCode == "EW")
+    {
+      //console.log("daily_plan_data_temp[i].AirlineCode", daily_plan_data_temp[i].AirlineCode);
+    }
+    if (focus_airlines.includes(daily_plan_data_temp[i].AirlineCode)) 
+    {
+      console.log("daily_plan_data_temp[i].AirlineCode", daily_plan_data_temp[i].AirlineCode);
+      row.Priority = 2;
     }
   }
 }
