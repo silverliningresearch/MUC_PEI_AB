@@ -130,7 +130,9 @@ function CalculateAirportAirLineReport_asq() {
       }
     } 
     
-    daily_plan_data_temp.push(row);
+    if (row.Dest_Difference<0 ||  row.Airline_Difference<0  || row.Dest_Difference<0 ) {
+      daily_plan_data_temp.push(row);
+    }
   }
     
   //console.log("daily_plan_data_asq: ", daily_plan_data_asq);
@@ -166,12 +168,13 @@ function CalculateAirportAirLineReport_asq() {
       row = daily_plan_data_temp[i];
       row.Priority = 0;
       daily_plan_data_asq.push(row);
-      if((count < daily_plan_data_temp.length*0.3 ))
+      if((count < daily_plan_data_temp.length*0.3)) //hightlight 30% of the total list
       {
         //-	Flights with a quota target less than 4 should never be red
         //-	Flights with a completion percentage of ≥85% should never be red
         if (row.dest_airline_still_missing==1)
         {
+          count++; 
           row.Priority = 1;
           row.ASQ_missing = "";
         }
@@ -190,6 +193,7 @@ function CalculateAirportAirLineReport_asq() {
             }
           }
           if ((found==0)) {
+            count++; 
             row.Priority = 1;
             //row.Difference = row.Airline_Difference;
             row.ASQ_missing = row.AirlineCode + " (missing " +  row.Airline_Difference + ")";            
@@ -207,6 +211,7 @@ function CalculateAirportAirLineReport_asq() {
             }
           }
           if (found==0) {
+            count++; 
             row.Priority = 1;
             //row.Difference = row.Dest_Difference;
             row.ASQ_missing = row.Dest + " (missing " +  row.Dest + ")";            
@@ -219,7 +224,6 @@ function CalculateAirportAirLineReport_asq() {
                 || (currentMonth.substring(0,2) == "12") 
                 || (currentMonth.substring(0,2) == "03") || (currentMonth.substring(0,2) == "06") )) 
         { 
-          count++; //hightlight 30% of the total list
           if (row.remaining_flights <20) row.Priority = 2 ;
         }
 
