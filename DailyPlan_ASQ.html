@@ -68,18 +68,22 @@
 
         //add data
         for (i = 0; i < daily_plan_data_asq.length; i++) {
-          var row = daily_plan_data_asq[i];
-          data.addRows([[
-              row.Date, 
-              row.Time, 
-              row.TER, row.GateArea, row.Gate,
-              row.Flight, row.DestName, 
-              Number(row.remaining_flights), Number(row.Quota), Number(row.Completed), Number(row.Difference), 
-              Number(row.Completed_percent), 
-              row.ASQ_missing,
-              Number(row.Prioritisation_score), 
-              Number(row.Priority)]]);
-			  }	
+          if ((daily_plan_data_asq[i].Difference < 0)  //airline-dest still missing data
+                ||(daily_plan_data_asq[i].Priority > 0)) // or either airline or dest still missing data
+          {
+            var row = daily_plan_data_asq[i];
+            data.addRows([[
+                row.Date, 
+                row.Time, 
+                row.TER, row.GateArea, row.Gate,
+                row.Flight, row.DestName, 
+                Number(row.remaining_flights), Number(row.Quota), Number(row.Completed), Number(row.Difference), 
+                Number(row.Completed_percent), 
+                row.ASQ_missing,
+                Number(row.Prioritisation_score), 
+                Number(row.Priority)]]);
+          }
+        }	
 
         //highlight priority one
         var priority_col = data.getNumberOfColumns()-1; //last one
