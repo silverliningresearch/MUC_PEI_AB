@@ -152,7 +152,7 @@ function CalculateAirportAirLineReport_asq() {
     //-	Flights with a completion percentage of ≥85% should never be red
     row = daily_plan_data_temp[i];
     row.dest_airline_still_missing = 0;
-    if ((row.Quota>=4) && (row.Completed_percent<=85))
+    if ((row.Quota>=4) && (row.Completed_percent<85))
     {
       row.dest_airline_still_missing = 1;
     }
@@ -178,7 +178,7 @@ function CalculateAirportAirLineReport_asq() {
           row.Priority = 1;
           row.ASQ_missing = "";
         }
-        else if ((row.Airline_Quota>=4) && (row.Airline_Completed_percent<=85))
+        else if ((row.Airline_Quota>=4) && (row.Airline_Completed_percent<85))
         {
           //console.log("Airline_Quota: ", row.AirlineCode);
           //console.log("Airline_Completed_percent: ", row.Airline_Completed_percent);
@@ -186,31 +186,32 @@ function CalculateAirportAirLineReport_asq() {
           var found = 0;
           for (var k = 0; k < daily_plan_data_temp.length; k++) 
           {
-            if (daily_plan_data_temp[k].AirlineCode == row.AirlineCode) 
+            if ((daily_plan_data_temp[k].AirlineCode == row.AirlineCode) && (daily_plan_data_temp[k].dest_airline_still_missing==1)
+            &&  (daily_plan_data_temp[k].Completed_percent<85))
             {
               found = 1;
               break;
             }
           }
-          if ((found==0)) {
+          if ((found==0) &&  (row.Completed_percent<100)) {
             count++; 
             row.Priority = 1;
             //row.Difference = row.Airline_Difference;
             row.ASQ_missing = row.AirlineCode + " (missing " +  row.Airline_Difference + ")";            
           }
-        } else if ((row.Dest_Quota>=4) && (row.Dest_Completed_percent<=85))
+        } else if ((row.Dest_Quota>=4) && (row.Dest_Completed_percent<85))
         {
           //only highlight if the dest_airlines this Dest belong to not hightlighted yet
           var found = 0;
           for (var k = 0; k < daily_plan_data_temp.length; k++) 
           {
-            if (daily_plan_data_temp[k].Dest == row.Dest) 
+            if ((daily_plan_data_temp[k].Dest == row.Dest) && (daily_plan_data_temp[k].dest_airline_still_missing==1))
             {
               found = 1;
               break;
             }
           }
-          if (found==0) {
+          if ((found==0) &&  (row.Completed_percent<100)) {
             count++; 
             row.Priority = 1;
             //row.Difference = row.Dest_Difference;
