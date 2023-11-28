@@ -168,7 +168,8 @@ function CalculateAirportAirLineReport_asq() {
       row = daily_plan_data_temp[i];
       row.Priority = 0;
       daily_plan_data_asq.push(row);
-      if((count < daily_plan_data_temp.length*0.3)) //hightlight 30% of the total list
+      if((count < daily_plan_data_temp.length*0.3)  //hightlight 30% of the total list
+         || is_2nd_hafl_of_the_quarter_asq())       //hightlight all in the 2nd half of the quarter 
       {
         //-	Flights with a quota target less than 4 should never be red
         //-	Flights with a completion percentage of ≥85% should never be red
@@ -215,23 +216,19 @@ function CalculateAirportAirLineReport_asq() {
             count++; 
             row.Priority = 1;
             //row.Difference = row.Dest_Difference;
-            row.ASQ_missing = row.Dest + " (missing " +  row.Dest + ")";            
+            row.ASQ_missing = row.Dest + " (missing " +  row.Dest_Difference + ")";            
           }
         }
 
         //console.log("current_month.substring(0,2):", currentMonth.substring(0,2));
-        if ((row.Priority == 1) 
-            && ((currentMonth.substring(0,2) == "09") 
-                || (currentMonth.substring(0,2) == "12") 
-                || (currentMonth.substring(0,2) == "03") || (currentMonth.substring(0,2) == "06") )) 
+        if ((row.Priority == 1) && (is_the_last_month_of_Quarter_asq())) //dark red hightlight in the last month of the quarter
         { 
           if (row.remaining_flights <20) row.Priority = 2 ;
         }
-
       }
     }
   }
-
+console.log("daily_plan_data_asq: ", daily_plan_data_asq);
 
 }
 
@@ -265,6 +262,53 @@ function isNotThePastDate_asq(date) //"07-02-2023"
   return (result);
 }
 
+function is_2nd_hafl_of_the_quarter_asq() //"07-02-2023"
+{
+  var current_day_of_month =  new Date().getDate();
+  var current_month =  new Date().getMonth()+1;
+  var result = false;
+  
+  switch(current_month) {
+    case 3:
+    case 6:
+    case 9:
+    case 12:
+      result = true;
+      break;   
+    case 2:
+    case 5:
+    case 8:
+    case 11:
+      if (current_day_of_month>=20) result = true; 
+        break;         
+    default:
+      result = false;
+      break;
+  }
+
+  return (result);
+}
+
+function is_the_last_month_of_Quarter_asq() //"07-02-2023"
+{
+  var current_day_of_month =  new Date().getDate();
+  var current_month =  new Date().getMonth()+1;
+  var result = false;
+  
+  switch(current_month) {
+    case 3:
+    case 6:
+    case 9:
+    case 12:
+      result = true;
+      break;   
+    default:
+      result = false;
+      break;
+  }
+
+  return (result);
+}
 function CalculateDOOP_asq() {
   for (var i = 0; i < dest_airline_quota_asq.length; i++) {
     dest_airline_quota_asq[i].doop = " ";
