@@ -59,7 +59,7 @@ function initCurrentTimeVars() {
 function isCurrentMonth(interviewEndDate)
 {
 // Input: "2023-04-03 10:06:22 GMT"
-  var interviewDateParsed = interviewEndDate.split("-")
+  var interviewDateParsed = interviewEndDate.split("-");
 
   var interviewYear = (interviewDateParsed[0]);
   var interviewMonth =(interviewDateParsed[1]);

@@ -99,10 +99,6 @@ function CalculateAirportAirLineReport() {
     {
       row.Priority = 1;
     }
-    if (daily_plan_data_temp[i].AirlineCode == "EW")
-    {
-      //console.log("daily_plan_data_temp[i].AirlineCode", daily_plan_data_temp[i].AirlineCode);
-    }
     if (focus_airlines.includes(daily_plan_data_temp[i].AirlineCode)) 
     {
       //console.log("daily_plan_data_temp[i].AirlineCode", daily_plan_data_temp[i].AirlineCode);

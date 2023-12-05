@@ -101,7 +101,8 @@
           if ((daily_plan_data_asq[i].Difference < 0)  //airline-dest still missing data
               ||(daily_plan_data_asq[i].Priority > 0)) // or either airline or dest still missing data
           {
-            daily_plan_data_asq[i].Survey = "ASQ"; 
+            daily_plan_data_asq[i].Survey = "ASQ";
+            daily_plan_data_asq[i].Flight = daily_plan_data_asq[i].Flight_Show;
             daily_plan_data.push(daily_plan_data_asq[i]);
           }
         }

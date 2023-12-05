@@ -135,9 +135,6 @@ function CalculateAirportAirLineReport_asq() {
     }
   }
     
-  //console.log("daily_plan_data_asq: ", daily_plan_data_asq);
-  //console.log("dest_airline_quota_asq: ", dest_airline_quota_asq);
-
   total_completed_percent_asq = (100*(total_completed_asq/total_quota_asq)).toFixed(0);   
   daily_plan_data_asq = [];
   daily_plan_data_asq.length = 0;
@@ -228,13 +225,11 @@ function CalculateAirportAirLineReport_asq() {
       }
     }
   }
-console.log("daily_plan_data_asq: ", daily_plan_data_asq);
-
 }
 
 function getDOOP_asq(date) //"07-02-2023"
 {
-  var parts = date.split("-")
+  var parts = date.split("-");
   var day = parts[0];
   var Month = parts[1];
   var Year = parts[2];

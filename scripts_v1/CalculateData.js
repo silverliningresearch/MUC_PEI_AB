@@ -102,7 +102,7 @@ function CalculateAirportAirLineReport() {
 
 function getDOOP(date) //"07-02-2023"
 {
-  var parts = date.split("-")
+  var parts = date.split("-");
   var day = parts[0];
   var Month = parts[1];
   var Year = parts[2];
@@ -120,7 +120,7 @@ function isNotThePastDate(date) //"07-02-2023"
   var current_day_of_month =  new Date().getDate();
   var current_month =  new Date().getMonth()+1;
 
-  var parts = date.split("-")
+  var parts = date.split("-");
   var flight_day = parseInt(parts[0]);
   var Month = parseInt(parts[1]);
   

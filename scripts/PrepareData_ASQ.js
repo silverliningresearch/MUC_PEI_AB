@@ -171,13 +171,23 @@ function prepareInterviewData_asq() {
     //only get complete interview & not test
     var interview_year = interview["InterviewDate"].substring(0,4);
     var interview_month = interview["InterviewDate"].substring(5,7);//"2023-04-03 06:18:18"
+    var parts = interview["quota_id"].split("-");
+
+    var Agent_Letters = parts[0];
+    var Agent_Destination = parts[1];
+    
+    //speciall treatment for EJU EZY MBU
+    if (Agent_Letters == "EZY") Agent_Letters = "U2";
+    if (Agent_Letters == "EJU") Agent_Letters = "EC";
+    if (Agent_Letters == "MBU") Agent_Letters = "DI";
+
     var interview_quarter = getQuarterFromMonth_asq(interview_month, interview_year);
 
     if ((currentQuarter == interview_quarter))
     {
-      var Airline_Dest = '"Airline_Dest"' + ":" + '"' +  interview["quota_id"] + '", ';
-      var Airline = '"Airline"' + ":" + '"' +  interview["quota_id"].substring(0, 2) + '", ';
-      var Dest = '"Dest"' + ":" + '"' +  interview["quota_id"].substring(3, 6) + '", ';
+      var Airline_Dest = '"Airline_Dest"' + ":" + '"' + Agent_Letters + "-" + Agent_Destination + '", ';
+      var Airline = '"Airline"' + ":" + '"' +  Agent_Letters + '", ';
+      var Dest = '"Dest"' + ":" + '"' +  Agent_Destination + '", ';
       var InterviewEndDate = '"InterviewEndDate"' + ":" + '"' +  interview["InterviewDate"]+ '", ' ;
       var Completed_of_interviews = '"Completed_of_interviews"' + ":" + '"' +  interview["Number of interviews"] ;
       var str = '{' + Airline_Dest + Airline + Dest + InterviewEndDate + Completed_of_interviews + '"}';
@@ -195,6 +205,25 @@ function prepareInterviewData_asq() {
   
   for (i = 0; i < flight_list_temp.length; i++) {
     let flight = flight_list_temp[i];
+
+    //speciall treatment for EJU and EZY  
+    var flight_letters = flight.Flight.substring(0,3);
+    var flight_number = flight.Flight.substring(3,8);
+    flight.Flight_Show = flight.Flight;
+    
+    if ((flight_letters == "EZY") || (flight_letters == "EJU") || (flight_letters == "MBU")) 
+    {
+      var new_flight_letters = flight_letters;
+      if (flight_letters == "EZY") new_flight_letters = "U2";
+      if (flight_letters == "EJU") new_flight_letters = "EC";
+      if (flight_letters == "MBU") new_flight_letters = "DI";
+      
+      flight.Flight_Show = new_flight_letters + " " + flight_number;
+      flight.AirlineCode = new_flight_letters;
+      
+      flight.Flight_Show = flight.Flight_Show + " (" +  flight.Flight +")";
+    }
+
 
     flight.Airline_Dest = flight.AirlineCode + "-" + flight.Dest;//code for compare
 
@@ -262,8 +291,7 @@ function prepareInterviewData_asq() {
         flight.Dest_Quota = quota.Quota;
        }
     }
+
     if (flight.Quota>0) daily_plan_data_asq.push(flight);
   }
- 
-  //console.log("daily_plan_data_asq: ", daily_plan_data_asq);
 }
