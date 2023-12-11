@@ -27,10 +27,16 @@ function CalculateAirportAirLineReport_asq() {
     }
     if (found_temp==0) not_in_quota_list.push(interview_data_asq[i]);
   }
-  console.log("not_in_quota_list: ", not_in_quota_list);
+  console.log("ASQ - not_in_quota_list: ", not_in_quota_list);
 
   //Dest_Airline related
   for (i = 0; i < dest_airline_quota_asq.length; i++) {
+    //debug only
+    if (dest_airline_quota_asq[i].Airline_Dest == "IB-MAD")
+    {
+      //console.log("daily_plan_data_asq[i]: ", airline_quota_asq[i]); 
+    }
+
     row = dest_airline_quota_asq[i];
     row.Completed = 0;
     for (j = 0; j < interview_data_asq.length; j++) {
@@ -84,8 +90,11 @@ function CalculateAirportAirLineReport_asq() {
     row.Dest_Completed_percent =(100*(row.Dest_Completed/row.Quota)).toFixed(0);
   }
 
+  //Set highlight 
   for (i = 0; i < daily_plan_data_asq.length; i++) {
     row = daily_plan_data_asq[i];
+
+    //Dest airline 
     for (j = 0; j < dest_airline_quota_asq.length; j++) {
       if (row.Airline_Dest.toUpperCase() == dest_airline_quota_asq[j].Airline_Dest.toUpperCase()) 
       {
@@ -102,11 +111,12 @@ function CalculateAirportAirLineReport_asq() {
       }
     }  
 
+    //Airline 
     row.Airline_Difference = 0;
     row.Airline_Completed_percent = 100;
 
     for (j = 0; j < airline_quota_asq.length; j++) {
-      if (row.Airline.toUpperCase() == airline_quota_asq[j].Airline.toUpperCase()) 
+      if (row.AirlineCode.toUpperCase() == airline_quota_asq[j].Airline.toUpperCase()) 
       {
         //if ( airline_quota_asq[j].Difference < 0) 
         {
@@ -155,7 +165,7 @@ function CalculateAirportAirLineReport_asq() {
     }
   }
   var count  = 0;
-  //highlight dest_airlines
+  //highlight dest_airlines or Dest or Airline
   for (i = 0; i < daily_plan_data_temp.length; i++) {
     if ((daily_plan_data_temp[i].Difference < 0)
       ||(daily_plan_data_temp[i].Airline_Difference < 0)
@@ -170,57 +180,65 @@ function CalculateAirportAirLineReport_asq() {
       {
         //-	Flights with a quota target less than 4 should never be red
         //-	Flights with a completion percentage of ≥85% should never be red
-        if (row.dest_airline_still_missing==1)
+        if (row.dest_airline_still_missing==1) //dest_airline
         {
           count++; 
           row.Priority = 1;
           row.ASQ_missing = "";
         }
-        else if ((row.Airline_Quota>=4) && (row.Airline_Completed_percent<85))
+        else 
         {
-          //console.log("Airline_Quota: ", row.AirlineCode);
-          //console.log("Airline_Completed_percent: ", row.Airline_Completed_percent);
-          //only highlight if the dest_airlines this Airline belong to not hightlighted yet
-          var found = 0;
-          for (var k = 0; k < daily_plan_data_temp.length; k++) 
+          if ((row.Airline_Quota>=4) && (row.Airline_Completed_percent<85)) //airline
           {
-            if ((daily_plan_data_temp[k].AirlineCode == row.AirlineCode) && (daily_plan_data_temp[k].dest_airline_still_missing==1)
-            &&  (daily_plan_data_temp[k].Completed_percent<85))
+            //console.log("Airline_Quota: ", row.AirlineCode);
+            //console.log("Airline_Completed_percent: ", row.Airline_Completed_percent);
+            //only highlight if the dest_airlines this Airline belong to not hightlighted yet
+            var found = 0;
+            for (var k = 0; k < daily_plan_data_temp.length; k++) 
             {
-              found = 1;
-              break;
+              if ((daily_plan_data_temp[k].AirlineCode == row.AirlineCode) && (daily_plan_data_temp[k].dest_airline_still_missing==1)
+              &&  (daily_plan_data_temp[k].Completed_percent<85))
+              {
+                found = 1;
+                break;
+              }
+            }
+            if ((found==0) && (row.Airline_Completed_percent<85)) {//airline
+              count++; 
+              row.Priority = 1;
+              row.ASQ_missing = row.AirlineCode + " (missing " +  row.Airline_Difference + ")";            
+            }
+          } 
+          
+          if ((row.Dest_Quota>=4) && (row.Dest_Completed_percent<85)) //Dest
+          {
+            //only highlight if the dest_airlines this Dest belong to not hightlighted yet
+            var found = 0;
+            for (var k = 0; k < daily_plan_data_temp.length; k++) 
+            {
+              if ((daily_plan_data_temp[k].Dest == row.Dest) && (daily_plan_data_temp[k].dest_airline_still_missing==1))
+              {
+                found = 1;
+                break;
+              }
+            }
+            if ((found==0) &&  (row.Dest_Completed_percent<85)) { //Dest
+              count++; 
+              row.Priority = 1;
+              row.ASQ_missing = row.Dest + " (missing " +  row.Dest_Difference + ")";            
             }
           }
-          if ((found==0) &&  (row.Completed_percent<100)) {
-            count++; 
-            row.Priority = 1;
-            //row.Difference = row.Airline_Difference;
-            row.ASQ_missing = row.AirlineCode + " (missing " +  row.Airline_Difference + ")";            
-          }
-        } else if ((row.Dest_Quota>=4) && (row.Dest_Completed_percent<85))
-        {
-          //only highlight if the dest_airlines this Dest belong to not hightlighted yet
-          var found = 0;
-          for (var k = 0; k < daily_plan_data_temp.length; k++) 
-          {
-            if ((daily_plan_data_temp[k].Dest == row.Dest) && (daily_plan_data_temp[k].dest_airline_still_missing==1))
-            {
-              found = 1;
-              break;
-            }
-          }
-          if ((found==0) &&  (row.Completed_percent<100)) {
-            count++; 
-            row.Priority = 1;
-            //row.Difference = row.Dest_Difference;
-            row.ASQ_missing = row.Dest + " (missing " +  row.Dest_Difference + ")";            
-          }
+          
         }
 
-        //console.log("current_month.substring(0,2):", currentMonth.substring(0,2));
-        if ((row.Priority == 1) && (is_the_last_month_of_Quarter_asq())) //dark red hightlight in the last month of the quarter
+        if ((row.Priority == 1)) 
         { 
-          if (row.remaining_flights <20) row.Priority = 2 ;
+          if ((row.remaining_flights <20) 
+              ||(is_the_last_month_of_Quarter_asq()) //dark red hightlight in the last month of the quarter
+             )
+          {
+            row.Priority = 2;
+          }
         }
       }
     }
@@ -252,8 +270,6 @@ function isNotThePastDate_asq(date) //"07-02-2023"
   var Month = parseInt(parts[1]);
   
   var result = (((flight_day >= current_day_of_month) && (Month==current_month) ) || (Month>current_month));
-  //console.log("flight_day", date);
-  //console.log("current_day_of_month", current_day_of_month);
   return (result);
 }
 
