@@ -233,25 +233,25 @@ function prepareInterviewData_asq() {
 
     //currentMonth: 02-2023
     //flight.Date: 08-02-2023
-    var day_of_month = parseInt(flight.Date.substring(0,2));
-    if (currentQuarter ==  getQuarterFromMonth_asq(flight.Date.substring(3,5), flight.Date.substring(6,10))) { 
-      if ((is_the_last_month_of_Quarter_asq() && day_of_month <=12)
-          || !is_the_last_month_of_Quarter_asq())
+    if ((is_the_last_month_of_Quarter_asq() && day_of_month <=12)
+    || !is_the_last_month_of_Quarter_asq())
+    { 
+      var day_of_month = parseInt(flight.Date.substring(0,2));
+      if (currentQuarter ==  getQuarterFromMonth_asq(flight.Date.substring(3,5), flight.Date.substring(6,10))) 
       { 
         this_month_flight_list_asq.push(flight);
+      }	
+      
+      //only get today & not departed flight
+      if (((currentDate == flight.Date) && notDeparted_asq(flight.Time))
+          || (flight.Date == nextDate)
+        )
+      { 
+        flight.Date_Time = flight.Date.substring(6,10) + flight.Date.substring(3,5) + flight.Date.substring(0,2) + flight.Time;
+        //flight.Date_Time = flight.Time;
+        today_flight_list_asq.push(flight);
       }
-    }	
-    
-    //only get today & not departed flight
-    if (((currentDate == flight.Date) && notDeparted_asq(flight.Time))
-        || (flight.Date == nextDate)
-      )
-    { 
-      flight.Date_Time = flight.Date.substring(6,10) + flight.Date.substring(3,5) + flight.Date.substring(0,2) + flight.Time;
-      //flight.Date_Time = flight.Time;
-      today_flight_list_asq.push(flight);
-    }
-			   
+    }			   
   }
   
     //add quota data
