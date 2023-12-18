@@ -6452,7 +6452,7 @@
  },
  {
   "quota_id": "SKG - A3",
-  "Quota": 8,
+  "Quota": 10,
   "Year": "2024",
   "Month": "01"
  },
@@ -6470,7 +6470,7 @@
  },
  {
   "quota_id": "CDG - AF",
-  "Quota": 11,
+  "Quota": 12,
   "Year": "2024",
   "Month": "01"
  },
@@ -6488,7 +6488,7 @@
  },
  {
   "quota_id": "LHR - BA",
-  "Quota": 18,
+  "Quota": 20,
   "Year": "2024",
   "Month": "01"
  },
@@ -6554,7 +6554,7 @@
  },
  {
   "quota_id": "DXB - EK",
-  "Quota": 25,
+  "Quota": 26,
   "Year": "2024",
   "Month": "01"
  },
@@ -6650,7 +6650,7 @@
  },
  {
   "quota_id": "AUH - EY",
-  "Quota": 10,
+  "Quota": 11,
   "Year": "2024",
   "Month": "01"
  },
@@ -6674,7 +6674,7 @@
  },
  {
   "quota_id": "MAD - IB",
-  "Quota": 8,
+  "Quota": 10,
   "Year": "2024",
   "Month": "01"
  },
@@ -6710,7 +6710,7 @@
  },
  {
   "quota_id": "ATH - LH",
-  "Quota": 10,
+  "Quota": 11,
   "Year": "2024",
   "Month": "01"
  },
@@ -6728,7 +6728,7 @@
  },
  {
   "quota_id": "BER - LH",
-  "Quota": 31,
+  "Quota": 32,
   "Year": "2024",
   "Month": "01"
  },
@@ -6740,7 +6740,7 @@
  },
  {
   "quota_id": "BIO - LH",
-  "Quota": 10,
+  "Quota": 11,
   "Year": "2024",
   "Month": "01"
  },
@@ -6776,7 +6776,7 @@
  },
  {
   "quota_id": "BRU - LH",
-  "Quota": 10,
+  "Quota": 11,
   "Year": "2024",
   "Month": "01"
  },
@@ -6788,7 +6788,7 @@
  },
  {
   "quota_id": "BUD - LH",
-  "Quota": 10,
+  "Quota": 11,
   "Year": "2024",
   "Month": "01"
  },
@@ -6818,7 +6818,7 @@
  },
  {
   "quota_id": "CPH - LH",
-  "Quota": 11,
+  "Quota": 12,
   "Year": "2024",
   "Month": "01"
  },
@@ -6884,7 +6884,7 @@
  },
  {
   "quota_id": "FRA - LH",
-  "Quota": 43,
+  "Quota": 44,
   "Year": "2024",
   "Month": "01"
  },
@@ -6896,7 +6896,7 @@
  },
  {
   "quota_id": "GOT - LH",
-  "Quota": 8,
+  "Quota": 10,
   "Year": "2024",
   "Month": "01"
  },
@@ -6914,13 +6914,13 @@
  },
  {
   "quota_id": "HAM - LH",
-  "Quota": 30,
+  "Quota": 31,
   "Year": "2024",
   "Month": "01"
  },
  {
   "quota_id": "HEL - LH",
-  "Quota": 8,
+  "Quota": 10,
   "Year": "2024",
   "Month": "01"
  },
@@ -6974,7 +6974,7 @@
  },
  {
   "quota_id": "LHR - LH",
-  "Quota": 25,
+  "Quota": 26,
   "Year": "2024",
   "Month": "01"
  },
@@ -7052,7 +7052,7 @@
  },
  {
   "quota_id": "OSL - LH",
-  "Quota": 11,
+  "Quota": 12,
   "Year": "2024",
   "Month": "01"
  },
@@ -7124,7 +7124,7 @@
  },
  {
   "quota_id": "SOF - LH",
-  "Quota": 8,
+  "Quota": 10,
   "Year": "2024",
   "Month": "01"
  },
@@ -7184,7 +7184,7 @@
  },
  {
   "quota_id": "ZRH - LH",
-  "Quota": 8,
+  "Quota": 10,
   "Year": "2024",
   "Month": "01"
  },
@@ -7214,7 +7214,7 @@
  },
  {
   "quota_id": "VIE - OS",
-  "Quota": 11,
+  "Quota": 12,
   "Year": "2024",
   "Month": "01"
  },
@@ -7226,7 +7226,7 @@
  },
  {
   "quota_id": "SAW - PC",
-  "Quota": 8,
+  "Quota": 10,
   "Year": "2024",
   "Month": "01"
  },
@@ -7244,7 +7244,7 @@
  },
  {
   "quota_id": "BRU - SN",
-  "Quota": 10,
+  "Quota": 11,
   "Year": "2024",
   "Month": "01"
  },
@@ -7298,7 +7298,7 @@
  },
  {
   "quota_id": "MAD - UX",
-  "Quota": 8,
+  "Quota": 10,
   "Year": "2024",
   "Month": "01"
  },
@@ -7315,38 +7315,8 @@
   "Month": "01"
  },
  {
-  "quota_id": "FNC - X3",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "01"
- },
- {
-  "quota_id": "FUE - X3",
-  "Quota": 7,
-  "Year": "2024",
-  "Month": "01"
- },
- {
-  "quota_id": "HRG - X3",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "01"
- },
- {
-  "quota_id": "LPA - X3",
-  "Quota": 5,
-  "Year": "2024",
-  "Month": "01"
- },
- {
-  "quota_id": "TFS - X3",
-  "Quota": 7,
-  "Year": "2024",
-  "Month": "01"
- },
- {
   "quota_id": "ADB - XQ",
-  "Quota": 11,
+  "Quota": 12,
   "Year": "2024",
   "Month": "01"
  },
