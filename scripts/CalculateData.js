@@ -90,7 +90,7 @@ function CalculateAirportAirLineReport() {
   });
 
   //special for MUC
-  var focus_airlines = ["DE", "EK", "EW", "XQ", "X3", "TK", "4Y"];
+  var focus_airlines = ["DE", "EK", "EW", "XQ", "TK", "4Y", "BA"]; //X3: TUI fly
   for (i = 0; i < daily_plan_data_temp.length; i++) {
     row = daily_plan_data_temp[i];
     row.Priority = 0;
