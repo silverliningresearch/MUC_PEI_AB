@@ -206,7 +206,7 @@ function prepareInterviewData_asq() {
   for (i = 0; i < flight_list_temp.length; i++) {
     let flight = flight_list_temp[i];
 
-    //speciall treatment for EJU and EZY  
+    //speciall treatment for EJU and EZY: Airline code in fligth schedule using ICAO, but sampling using IATA 
     var flight_letters = flight.Flight.substring(0,3);
     var flight_number = flight.Flight.substring(3,8);
     flight.Flight_Show = flight.Flight;
@@ -233,10 +233,10 @@ function prepareInterviewData_asq() {
 
     //currentMonth: 02-2023
     //flight.Date: 08-02-2023
+    var day_of_month = parseInt(flight.Date.substring(0,2));
     if ((is_the_last_month_of_Quarter_asq() && day_of_month <=12)
     || !is_the_last_month_of_Quarter_asq())
     { 
-      var day_of_month = parseInt(flight.Date.substring(0,2));
       if (currentQuarter ==  getQuarterFromMonth_asq(flight.Date.substring(3,5), flight.Date.substring(6,10))) 
       { 
         this_month_flight_list_asq.push(flight);
