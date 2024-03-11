@@ -205,7 +205,7 @@ function CalculateAirportAirLineReport_asq() {
             }
             if ((found==0) && (row.Airline_Completed_percent<85)) {//airline
               count++; 
-              //row.Priority = 1;
+              row.Priority = 1;
               row.ASQ_missing = row.AirlineCode + " (missing " +  row.Airline_Difference + ")";            
             }
           } 
@@ -224,7 +224,7 @@ function CalculateAirportAirLineReport_asq() {
             }
             if ((found==0) &&  (row.Dest_Completed_percent<85)) { //Dest
               count++; 
-              //row.Priority = 1;
+              row.Priority = 1;
               row.ASQ_missing = row.Dest + " (missing " +  row.Dest_Difference + ")";            
             }
           }
