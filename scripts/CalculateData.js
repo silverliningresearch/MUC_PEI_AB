@@ -91,6 +91,8 @@ function CalculateAirportAirLineReport() {
 
   //special for MUC
   var focus_airlines = ["DE", "EK", "EW", "XQ", "TK", "4Y", "BA"]; //X3: TUI fly
+  var focus_dest = ["ATL",  "BOS",  "CLT",  "DEN",  "DTW", "EWR",   "IAD",
+  "IAH",   "JFK",   "LAS",   "LAX",   "MIA",   "ORD",   "PHL",   "SFO",   "YHZ",   "YUL",  "YVR",  "YYZ"]; //X3: TUI fly
   for (i = 0; i < daily_plan_data_temp.length; i++) {
     row = daily_plan_data_temp[i];
     row.Priority = 0;
@@ -100,6 +102,11 @@ function CalculateAirportAirLineReport() {
       row.Priority = 1;
     }
     if (focus_airlines.includes(daily_plan_data_temp[i].AirlineCode)) 
+    {
+      //console.log("daily_plan_data_temp[i].AirlineCode", daily_plan_data_temp[i].AirlineCode);
+      row.Priority = 2;
+    }
+    if (focus_dest.includes(daily_plan_data_temp[i].Dest)) 
     {
       //console.log("daily_plan_data_temp[i].AirlineCode", daily_plan_data_temp[i].AirlineCode);
       row.Priority = 2;
