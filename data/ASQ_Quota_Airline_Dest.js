@@ -457,12 +457,6 @@
         "Notes": ""
        },
        {
-        "Airline_Dest": "U2-MAN",
-        "Quota": 0.0,
-        "Quarter": "2024-Q2",
-        "Notes": ""
-       },
-       {
         "Airline_Dest": "LH-MLA",
         "Quota": 4.0,
         "Quarter": "2024-Q2",
