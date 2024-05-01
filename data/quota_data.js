@@ -10093,98 +10093,20 @@
  },
 
  {
-  "quota_id": "CFU - 4Y",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "CHQ - 4Y",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "DJE - 4Y",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "05"
- },
- {
   "quota_id": "HER - 4Y",
-  "Quota": 8,
+  "Quota": 5,
   "Year": "2024",
   "Month": "05"
  },
  {
   "quota_id": "IBZ - 4Y",
-  "Quota": 13,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "JMK - 4Y",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "JTR - 4Y",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "KGS - 4Y",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "LPA - 4Y",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "MIR - 4Y",
-  "Quota": 3,
+  "Quota": 8,
   "Year": "2024",
   "Month": "05"
  },
  {
   "quota_id": "PMI - 4Y",
-  "Quota": 12,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "RAK - 4Y",
-  "Quota": 4,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "RHO - 4Y",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "TFS - 4Y",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "VAR - 4Y",
-  "Quota": 3,
-  "Year": "2024",
-  "Month": "05"
- },
- {
-  "quota_id": "XRY - 4Y",
-  "Quota": 3,
+  "Quota": 7,
   "Year": "2024",
   "Month": "05"
  },
@@ -10232,7 +10154,7 @@
  },
  {
   "quota_id": "LHR - BA",
-  "Quota": 27,
+  "Quota": 30,
   "Year": "2024",
   "Month": "05"
  },
@@ -10250,19 +10172,49 @@
  },
  {
   "quota_id": "AYT - DE",
-  "Quota": 3,
+  "Quota": 7,
+  "Year": "2024",
+  "Month": "05"
+ },
+ {
+  "quota_id": "FNC - DE",
+  "Quota": 4,
+  "Year": "2024",
+  "Month": "05"
+ },
+ {
+  "quota_id": "HER - DE",
+  "Quota": 5,
+  "Year": "2024",
+  "Month": "05"
+ },
+ {
+  "quota_id": "OLB - DE",
+  "Quota": 4,
   "Year": "2024",
   "Month": "05"
  },
  {
   "quota_id": "PMI - DE",
-  "Quota": 3,
+  "Quota": 6,
   "Year": "2024",
   "Month": "05"
  },
  {
   "quota_id": "PRN - DE",
-  "Quota": 5,
+  "Quota": 10,
+  "Year": "2024",
+  "Month": "05"
+ },
+ {
+  "quota_id": "RHO - DE",
+  "Quota": 4,
+  "Year": "2024",
+  "Month": "05"
+ },
+ {
+  "quota_id": "SUF - DE",
+  "Quota": 3,
   "Year": "2024",
   "Month": "05"
  },
@@ -10298,7 +10250,7 @@
  },
  {
   "quota_id": "DXB - EK",
-  "Quota": 25,
+  "Quota": 28,
   "Year": "2024",
   "Month": "05"
  },
@@ -10400,7 +10352,7 @@
  },
  {
   "quota_id": "PMI - EW",
-  "Quota": 10,
+  "Quota": 11,
   "Year": "2024",
   "Month": "05"
  },
@@ -10436,7 +10388,7 @@
  },
  {
   "quota_id": "AMS - KL",
-  "Quota": 11,
+  "Quota": 12,
   "Year": "2024",
   "Month": "05"
  },
@@ -10460,19 +10412,19 @@
  },
  {
   "quota_id": "ARN - LH",
-  "Quota": 12,
+  "Quota": 13,
   "Year": "2024",
   "Month": "05"
  },
  {
   "quota_id": "ATH - LH",
-  "Quota": 11,
+  "Quota": 12,
   "Year": "2024",
   "Month": "05"
  },
  {
   "quota_id": "BCN - LH",
-  "Quota": 14,
+  "Quota": 16,
   "Year": "2024",
   "Month": "05"
  },
@@ -10484,7 +10436,7 @@
  },
  {
   "quota_id": "BER - LH",
-  "Quota": 26,
+  "Quota": 29,
   "Year": "2024",
   "Month": "05"
  },
@@ -10562,13 +10514,13 @@
  },
  {
   "quota_id": "CDG - LH",
-  "Quota": 12,
+  "Quota": 14,
   "Year": "2024",
   "Month": "05"
  },
  {
   "quota_id": "CGN - LH",
-  "Quota": 12,
+  "Quota": 13,
   "Year": "2024",
   "Month": "05"
  },
@@ -10586,7 +10538,7 @@
  },
  {
   "quota_id": "CPH - LH",
-  "Quota": 11,
+  "Quota": 12,
   "Year": "2024",
   "Month": "05"
  },
@@ -10628,7 +10580,7 @@
  },
  {
   "quota_id": "DUS - LH",
-  "Quota": 21,
+  "Quota": 23,
   "Year": "2024",
   "Month": "05"
  },
@@ -10646,7 +10598,7 @@
  },
  {
   "quota_id": "FCO - LH",
-  "Quota": 13,
+  "Quota": 14,
   "Year": "2024",
   "Month": "05"
  },
@@ -10658,7 +10610,7 @@
  },
  {
   "quota_id": "FRA - LH",
-  "Quota": 27,
+  "Quota": 30,
   "Year": "2024",
   "Month": "05"
  },
@@ -10676,13 +10628,13 @@
  },
  {
   "quota_id": "HAJ - LH",
-  "Quota": 11,
+  "Quota": 12,
   "Year": "2024",
   "Month": "05"
  },
  {
   "quota_id": "HAM - LH",
-  "Quota": 31,
+  "Quota": 34,
   "Year": "2024",
   "Month": "05"
  },
@@ -10742,7 +10694,7 @@
  },
  {
   "quota_id": "LHR - LH",
-  "Quota": 22,
+  "Quota": 24,
   "Year": "2024",
   "Month": "05"
  },
@@ -11006,7 +10958,7 @@
  },
  {
   "quota_id": "DOH - QR",
-  "Quota": 12,
+  "Quota": 13,
   "Year": "2024",
   "Month": "05"
  },
@@ -11030,7 +10982,7 @@
  },
  {
   "quota_id": "IST - TK",
-  "Quota": 23,
+  "Quota": 26,
   "Year": "2024",
   "Month": "05"
  },
@@ -11114,7 +11066,7 @@
  },
  {
   "quota_id": "AYT - XQ",
-  "Quota": 21,
+  "Quota": 23,
   "Year": "2024",
   "Month": "05"
  },
