@@ -176,7 +176,8 @@ function CalculateAirportAirLineReport_asq() {
       row.Priority = 0;
       daily_plan_data_asq.push(row);
       if((count < daily_plan_data_temp.length*0.3)  //hightlight 30% of the total list
-         || is_2nd_hafl_of_the_quarter_asq())       //hightlight all in the 2nd half of the quarter 
+         || (row.remaining_flights <50 )
+         )       
       {
         //-	Flights with a quota target less than 4 should never be red
         //-	Flights with a completion percentage of ≥85% should never be red
@@ -233,9 +234,9 @@ function CalculateAirportAirLineReport_asq() {
 
         if ((row.Priority == 1)) 
         { 
-          if ((row.remaining_flights <20) 
-              ||(is_the_last_month_of_Quarter_asq()) //dark red hightlight in the last month of the quarter
-             )
+          if ((row.remaining_flights < 20 ) 
+              // ||(is_the_last_month_of_Quarter_asq()) //dark red hightlight in the last month of the quarter */
+              )
           {
             row.Priority = 2;
           }
@@ -243,7 +244,7 @@ function CalculateAirportAirLineReport_asq() {
 
         if ((row.Priority == 3)) 
         { 
-          if (is_the_last_month_of_Quarter_asq()) //normal red hightlight in the last month of the quarter
+          if (is_the_last_month_of_Quarter_asq()) //normal red highlight  in the last month of the quarter
           {
             row.Priority = 1;
           }
