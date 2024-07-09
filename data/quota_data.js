@@ -12090,7 +12090,7 @@
  },
 
 
-{
+ {
   "quota_id": "CLT - AA",
   "Quota": 8,
   "Year": "2024",
@@ -12116,7 +12116,7 @@
  },
  {
   "quota_id": "LHR - BA",
-  "Quota": 28,
+  "Quota": 14,
   "Year": "2024",
   "Month": "07"
  },
@@ -12151,14 +12151,38 @@
   "Month": "07"
  },
  {
-  "quota_id": "HRG - DI",
+  "quota_id": "CFU - DI",
+  "Quota": 4,
+  "Year": "2024",
+  "Month": "07"
+ },
+ {
+  "quota_id": "CHQ - DI",
   "Quota": 3,
   "Year": "2024",
   "Month": "07"
  },
  {
-  "quota_id": "PMI - DI",
+  "quota_id": "HER - DI",
   "Quota": 5,
+  "Year": "2024",
+  "Month": "07"
+ },
+ {
+  "quota_id": "HRG - DI",
+  "Quota": 5,
+  "Year": "2024",
+  "Month": "07"
+ },
+ {
+  "quota_id": "PMI - DI",
+  "Quota": 12,
+  "Year": "2024",
+  "Month": "07"
+ },
+ {
+  "quota_id": "TFS - DI",
+  "Quota": 3,
   "Year": "2024",
   "Month": "07"
  },
@@ -12260,7 +12284,7 @@
  },
  {
   "quota_id": "DOH - QR",
-  "Quota": 9,
+  "Quota": 11,
   "Year": "2024",
   "Month": "07"
  },
@@ -12308,7 +12332,7 @@
  },
  {
   "quota_id": "ADB - XQ",
-  "Quota": 9,
+  "Quota": 11,
   "Year": "2024",
   "Month": "07"
  },
@@ -12326,30 +12350,18 @@
  },
  {
   "quota_id": "HER - 4Y",
-  "Quota": 6,
+  "Quota": 3,
   "Year": "2024",
   "Month": "07"
  },
  {
   "quota_id": "IBZ - 4Y",
-  "Quota": 7,
-  "Year": "2024",
-  "Month": "07"
- },
- {
-  "quota_id": "KGS - 4Y",
   "Quota": 3,
   "Year": "2024",
   "Month": "07"
  },
  {
   "quota_id": "PMI - 4Y",
-  "Quota": 7,
-  "Year": "2024",
-  "Month": "07"
- },
- {
-  "quota_id": "RHO - 4Y",
   "Quota": 3,
   "Year": "2024",
   "Month": "07"
@@ -12530,7 +12542,7 @@
  },
  {
   "quota_id": "BOS - LH",
-  "Quota": 9,
+  "Quota": 11,
   "Year": "2024",
   "Month": "07"
  },
@@ -12566,7 +12578,7 @@
  },
  {
   "quota_id": "CGN - LH",
-  "Quota": 9,
+  "Quota": 11,
   "Year": "2024",
   "Month": "07"
  },
@@ -12656,7 +12668,7 @@
  },
  {
   "quota_id": "FRA - LH",
-  "Quota": 33,
+  "Quota": 34,
   "Year": "2024",
   "Month": "07"
  },
@@ -12674,7 +12686,7 @@
  },
  {
   "quota_id": "HAJ - LH",
-  "Quota": 9,
+  "Quota": 11,
   "Year": "2024",
   "Month": "07"
  },
@@ -12698,7 +12710,7 @@
  },
  {
   "quota_id": "IAD - LH",
-  "Quota": 9,
+  "Quota": 11,
   "Year": "2024",
   "Month": "07"
  },
@@ -12710,7 +12722,7 @@
  },
  {
   "quota_id": "JFK - LH",
-  "Quota": 9,
+  "Quota": 11,
   "Year": "2024",
   "Month": "07"
  },
@@ -12728,7 +12740,7 @@
  },
  {
   "quota_id": "LAX - LH",
-  "Quota": 9,
+  "Quota": 11,
   "Year": "2024",
   "Month": "07"
  },
@@ -12764,7 +12776,7 @@
  },
  {
   "quota_id": "MAD - LH",
-  "Quota": 9,
+  "Quota": 11,
   "Year": "2024",
   "Month": "07"
  },
