@@ -76,6 +76,13 @@ function initCurrentTimeVars() {
       total_quota = 1125;
       total_arrival_quota = 375;
       break;
+
+    case "11-2024":          
+    case "12-2024":      
+        report_version = 2;        
+        total_quota = 1500;
+        total_arrival_quota = 500;
+        break;           
     default:
       report_version = 2;        
       total_quota = 1125;
