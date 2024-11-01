@@ -134,7 +134,7 @@ function prepareInterviewData() {
   var quota_data_temp = JSON.parse(Destination_Quota);
   removed_ids_data = JSON.parse(removed_ids);
 
-  var interview_data_temp  = JSON.parse(interview_statistics);
+  var interview_data_temp  = JSON.parse(interview_data_raw);
   var flight_list_temp  = JSON.parse(MUC_Departures_Flight_List_Raw);
   var gate_info  = JSON.parse(MUC_Gate_Info);
 
@@ -162,21 +162,30 @@ function prepareInterviewData() {
     var interview = interview_data_temp[i];
 
     //only get complete interview & not test
-    if ( // (interview.InterviewState == "Complete") && 
-      (isCurrentMonth(interview.Interview_Date))
+    if ((interview.InterviewState == "Complete")
+      && (isCurrentMonth(interview.InterviewEndDate))
       )
     {
       if (interview["Dest"]) {
+        var dest = '"Dest"' + ":" + '"' +  interview["Dest"] + '"' + ", " ;
+        var quota_id;
         if (report_version == 2) {
-          interview.quota_id = interview["Dest"] + " - "  +  interview["AirlineCode"];
+          quota_id = '"quota_id"' + ":" + '"' +  interview["Dest"] + " - "  +  interview["AirlineCode"] + '"' + ", " ;
         }
         else {
-          interview.quota_id = interview["Dest"];
+          quota_id = '"quota_id"' + ":" + '"' +  interview["Dest"] + '"' + ", " ;
         }
         
-        interview.InterviewEndDate = interview["InterviewEndDate"];
-        interview_data.push(interview);
-
+        var InterviewEndDate = '"InterviewEndDate"' + ":" + '"' +  interview["InterviewEndDate"] ;
+        var str = '{'  + quota_id + dest + InterviewEndDate + '"}';
+        if (isvalid_id(interview["InterviewId"])) //check if valid
+        {
+          interview_data.push(JSON.parse(str));
+        }
+        else
+        {
+          console.log("invalid id: ", interview);
+        }
       }
       else{
         console.log("ignored interview: ", interview);
