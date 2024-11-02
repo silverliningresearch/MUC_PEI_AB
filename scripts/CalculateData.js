@@ -44,14 +44,13 @@ function CalculateAirportAirLineReport() {
     row.Prioritisation_score = row.Difference_percent*row.Difference/100;
 
     row.Completed_percent =(100*(row.Completed/row.Quota)).toFixed(0);
-    total_quota_completed = total_quota_completed + row.Completed;
-        
+            
     if ( row.Difference > 0) { //over quota
-      //total_quota_completed = total_quota_completed +row.Quota*1;
+      total_quota_completed = total_quota_completed +row.Quota*1;
     }
     else { //<= 0
       if (row.Completed) {
-        //total_quota_completed = total_quota_completed + row.Completed*1;
+        total_quota_completed = total_quota_completed + row.Completed*1;
       }
     }
 
