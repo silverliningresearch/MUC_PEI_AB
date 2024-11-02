@@ -35,7 +35,7 @@ function CalculateAirportAirLineReport() {
     for (j = 0; j < interview_data.length; j++) {
       if (row.quota_id.toUpperCase() == interview_data[j].quota_id.toUpperCase()) 
       { 
-        row.Completed = row.Completed + interview_data[j]["completed_interviews"];;;
+        row.Completed = row.Completed + interview_data[j]["completed_interviews"];
       }
     }
 
