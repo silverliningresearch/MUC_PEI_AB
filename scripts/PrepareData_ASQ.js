@@ -234,7 +234,7 @@ function prepareInterviewData_asq() {
     //currentMonth: 02-2023
     //flight.Date: 08-02-2023
     var day_of_month = parseInt(flight.Date.substring(0,2));
-    if ((is_the_last_month_of_Quarter_asq() && day_of_month <=12)
+    if ((is_the_last_month_of_Quarter_asq() && day_of_month <=22) //from 2025, last day is 22nd
     || !is_the_last_month_of_Quarter_asq())
     { 
       if (currentQuarter ==  getQuarterFromMonth_asq(flight.Date.substring(3,5), flight.Date.substring(6,10))) 

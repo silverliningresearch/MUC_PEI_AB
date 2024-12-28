@@ -225,7 +225,10 @@ function CalculateAirportAirLineReport_asq() {
             }
             if ((found==0) &&  (row.Dest_Completed_percent<85)) { //Dest
               count++; 
-              if (is_the_last_month_of_Quarter_asq()) row.Priority = 3;
+              if (is_the_last_month_of_Quarter_asq()) 
+              {
+                row.Priority = 3;
+              }
               row.ASQ_missing = row.Dest + " (missing " +  row.Dest_Difference + ")";            
             }
           }
@@ -240,15 +243,24 @@ function CalculateAirportAirLineReport_asq() {
           {
             row.Priority = 2;
           }
+
+          //specail airline
+          var focus_airline = ["DY", "D8", "VY", "X3", "XQ", "IB", "PC"];
+
+          if (focus_airline.includes(row.AirlineCode)) 
+          {
+            row.Priority = 2;
+          }
         }
 
         if ((row.Priority == 3)) 
         { 
-          if (is_the_last_month_of_Quarter_asq()) //normal red highlight  in the last month of the quarter
+          if (is_the_last_month_of_Quarter_asq()) //normal red highlight in the last month of the quarter
           {
             row.Priority = 1;
           }
         }
+
       }
     }
   }
