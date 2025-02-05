@@ -1373,7 +1373,6 @@
  },
 
 
-
   {
   "Airline_Dest": "4Y-PMI",
   "Quota": 4.0,
@@ -2206,9 +2205,11 @@
 
 
 
-  {
+
+
+ {
   "Airline_Dest": "4Y-PMI",
-  "Quota": 6.0,
+  "Quota": 4.0,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
@@ -2304,7 +2305,7 @@
  },
  {
   "Airline_Dest": "DE-HRG",
-  "Quota": 5.0,
+  "Quota": 4.0,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
@@ -2316,6 +2317,30 @@
  },
  {
   "Airline_Dest": "DE-TFS",
+  "Quota": 4.0,
+  "Quarter": "2025-Q1",
+  "Notes": ""
+ },
+ {
+  "Airline_Dest": "DI-PMI",
+  "Quota": 4.0,
+  "Quarter": "2025-Q1",
+  "Notes": ""
+ },
+ {
+  "Airline_Dest": "DI-HRG",
+  "Quota": 4.0,
+  "Quarter": "2025-Q1",
+  "Notes": ""
+ },
+ {
+  "Airline_Dest": "DI-CFU",
+  "Quota": 4.0,
+  "Quarter": "2025-Q1",
+  "Notes": ""
+ },
+ {
+  "Airline_Dest": "DI-CHQ",
   "Quota": 4.0,
   "Quarter": "2025-Q1",
   "Notes": ""
@@ -2489,20 +2514,14 @@
   "Notes": ""
  },
  {
-  "Airline_Dest": "LH-BCN",
-  "Quota": 8.0,
-  "Quarter": "2025-Q1",
-  "Notes": ""
- },
- {
   "Airline_Dest": "LH-FCO",
   "Quota": 9.0,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
  {
-  "Airline_Dest": "LH-CDG",
-  "Quota": 7.0,
+  "Airline_Dest": "LH-BCN",
+  "Quota": 8.0,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
@@ -2513,13 +2532,13 @@
   "Notes": ""
  },
  {
-  "Airline_Dest": "LH-AMS",
-  "Quota": 6.0,
+  "Airline_Dest": "LH-CDG",
+  "Quota": 7.0,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
  {
-  "Airline_Dest": "LH-BKK",
+  "Airline_Dest": "LH-AMS",
   "Quota": 6.0,
   "Quarter": "2025-Q1",
   "Notes": ""
@@ -2549,12 +2568,6 @@
   "Notes": ""
  },
  {
-  "Airline_Dest": "LH-DEL",
-  "Quota": 6.0,
-  "Quarter": "2025-Q1",
-  "Notes": ""
- },
- {
   "Airline_Dest": "LH-MAD",
   "Quota": 6.0,
   "Quarter": "2025-Q1",
@@ -2579,7 +2592,19 @@
   "Notes": ""
  },
  {
+  "Airline_Dest": "LH-BKK",
+  "Quota": 5.0,
+  "Quarter": "2025-Q1",
+  "Notes": ""
+ },
+ {
   "Airline_Dest": "LH-BUD",
+  "Quota": 5.0,
+  "Quarter": "2025-Q1",
+  "Notes": ""
+ },
+ {
+  "Airline_Dest": "LH-DEL",
   "Quota": 5.0,
   "Quarter": "2025-Q1",
   "Notes": ""
@@ -2621,18 +2646,6 @@
   "Notes": ""
  },
  {
-  "Airline_Dest": "LH-STR",
-  "Quota": 5.0,
-  "Quarter": "2025-Q1",
-  "Notes": ""
- },
- {
-  "Airline_Dest": "LH-DUB",
-  "Quota": 4.0,
-  "Quarter": "2025-Q1",
-  "Notes": ""
- },
- {
   "Airline_Dest": "LH-FMO",
   "Quota": 4.0,
   "Quarter": "2025-Q1",
@@ -2663,13 +2676,13 @@
   "Notes": ""
  },
  {
-  "Airline_Dest": "LH-NAP",
+  "Airline_Dest": "LH-PRG",
   "Quota": 4.0,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
  {
-  "Airline_Dest": "LH-PRG",
+  "Airline_Dest": "LH-STR",
   "Quota": 4.0,
   "Quarter": "2025-Q1",
   "Notes": ""
@@ -2717,13 +2730,13 @@
   "Notes": ""
  },
  {
-  "Airline_Dest": "LH-CLT",
+  "Airline_Dest": "LH-CPT",
   "Quota": 4.0,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
  {
-  "Airline_Dest": "LH-CPT",
+  "Airline_Dest": "LH-DUB",
   "Quota": 4.0,
   "Quarter": "2025-Q1",
   "Notes": ""
@@ -2986,6 +2999,7 @@
   "Quarter": "2025-Q1",
   "Notes": ""
  }
+
 
 ]    
 

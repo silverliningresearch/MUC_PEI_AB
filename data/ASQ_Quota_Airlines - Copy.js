@@ -1808,9 +1808,10 @@
 
 
 
+
  {
   "Airline": "4Y",
-  "Quota": 10,
+  "Quota": 9,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
@@ -1858,7 +1859,7 @@
  },
  {
   "Airline": "BA",
-  "Quota": 11,
+  "Quota": 10,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
@@ -1889,6 +1890,12 @@
  {
   "Airline": "DE",
   "Quota": 13,
+  "Quarter": "2025-Q1",
+  "Notes": ""
+ },
+ {
+  "Airline": "DI",
+  "Quota": 18,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
@@ -1924,13 +1931,13 @@
  },
  {
   "Airline": "EN",
-  "Quota": 43,
+  "Quota": 42,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
  {
   "Airline": "EW",
-  "Quota": 14,
+  "Quota": 13,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
@@ -2002,7 +2009,7 @@
  },
  {
   "Airline": "LH",
-  "Quota": 391,
+  "Quota": 379,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
@@ -2079,14 +2086,8 @@
   "Notes": ""
  },
  {
-  "Airline": "SV",
-  "Quota": 1,
-  "Quarter": "2025-Q1",
-  "Notes": ""
- },
- {
   "Airline": "TG",
-  "Quota": 4,
+  "Quota": 3,
   "Quarter": "2025-Q1",
   "Notes": ""
  },
