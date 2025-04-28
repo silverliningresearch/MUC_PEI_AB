@@ -83,6 +83,18 @@ function initCurrentTimeVars() {
         total_arrival_quota = 500;
       break;      
     case "12-2024":      
+    case "01-2025":      
+    case "02-2025":      
+    case "03-2025":                  
+    case "04-2025":                  
+    case "05-2025":                  
+    case "06-2025":                  
+    case "07-2025":                  
+    case "08-2025":                                      
+    case "09-2025":                                      
+    case "10-2025":                                      
+    case "11-2025":                                      
+    case "12-2025":                                                      
       report_version = 2;        
       total_quota = 1125;
       total_arrival_quota = 375;
