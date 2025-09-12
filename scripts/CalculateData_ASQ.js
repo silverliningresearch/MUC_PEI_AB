@@ -140,7 +140,7 @@ function CalculateAirportAirLineReport_asq() {
       }
     } 
     
-    if (row.Dest_Difference<0 ||  row.Airline_Difference<0  || row.Dest_Difference<0 ) {
+    if (row.Difference<0 ||  row.Airline_Difference<0  || row.Dest_Difference<0 ) {
       daily_plan_data_temp.push(row);
     }
   }
