@@ -285,7 +285,7 @@ function prepareInterviewData_asq() {
       let quota = airline_quota_asq[j];
       if ((quota.Airline == flight.AirlineCode))
       {
-        flight.Airline_Quota = quota.Quota;
+        flight.Airline_Quota = quota.Quota; 
        }
     }
 
