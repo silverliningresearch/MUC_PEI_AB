@@ -26757,8 +26757,7 @@
 
 
 
-
-{
+ {
   "quota_id": "CLT - AA",
   "Quota": 8,
   "Year": "2025",
@@ -26778,7 +26777,7 @@
  },
  {
   "quota_id": "LHR - BA",
-  "Quota": 27,
+  "Quota": 28,
   "Year": "2025",
   "Month": "10"
  },
@@ -27000,7 +26999,7 @@
  },
  {
   "quota_id": "YYZ - AC",
-  "Quota": 6,
+  "Quota": 5,
   "Year": "2025",
   "Month": "10"
  },
@@ -27306,7 +27305,7 @@
  },
  {
   "quota_id": "HAM - LH",
-  "Quota": 35,
+  "Quota": 36,
   "Year": "2025",
   "Month": "10"
  },
@@ -27540,13 +27539,13 @@
  },
  {
   "quota_id": "YVR - LH",
-  "Quota": 5,
+  "Quota": 3,
   "Year": "2025",
   "Month": "10"
  },
  {
   "quota_id": "YYZ - LH",
-  "Quota": 5,
+  "Quota": 3,
   "Year": "2025",
   "Month": "10"
  },

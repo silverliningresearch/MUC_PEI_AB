@@ -90,6 +90,8 @@ function CalculateAirportAirLineReport() {
 
   //special for MUC
   var focus_airlines = ["DE", "EK", "EW", "XQ", "TK", "4Y", "BA"]; //X3: TUI fly
+
+  // focus US & CA
   var focus_dest = ["ATL",  "BOS",  "CLT",  "DEN",  "DTW", "EWR",   "IAD",
   "IAH",   "JFK",   "LAS",   "LAX",   "MIA",   "ORD",   "PHL",   "SFO",   "YHZ",   "YUL",  "YVR",  "YYZ"]; //X3: TUI fly
   for (i = 0; i < daily_plan_data_temp.length; i++) {
